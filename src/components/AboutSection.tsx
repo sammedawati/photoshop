@@ -41,36 +41,39 @@ const AboutSection = () => {
           Hello, We are Priyadarshani & Sachin. An award-winning photographer duo based in Pune.
         </p>
 
-        <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-24">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
           {photographers.map((photographer, index) => (
             <div
               key={photographer.name}
-              className="text-center animate-fade-in group"
+              className="bg-white rounded-[1.5rem] shadow-xl overflow-hidden max-w-[360px] w-full group transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 animate-fade-in"
               style={{ animationDelay: `${index * 200}ms` }}
             >
-              {/* Circular Image */}
-              <div className="w-40 h-40 md:w-56 md:h-56 mx-auto mb-4 rounded-full overflow-hidden border-4 border-cream-dark shadow-xl transition-transform duration-300 group-hover:scale-105">
+              {/* Image Container */}
+              <div className="relative h-[220px] overflow-hidden">
                 <img
                   src={photographer.image}
                   alt={photographer.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"
                 />
+                <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
 
-              {/* Info */}
-              <p className="text-sm text-muted-foreground mb-2 max-w-xs">
-                {photographer.title}
-              </p>
-              <h3 className="text-xl font-heading text-secondary">
-                {photographer.name}
-              </h3>
-              <Link
-                to={`/about/profile/${photographer.id}`}
-                className="mt-2 block text-sm text-muted-foreground hover:text-secondary transition-colors underline"
-              >
-                Know more
-              </Link>
+              {/* Info Container */}
+              <div className="p-5 text-center">
+                <p className="text-[10px] text-neutral-500 mb-2 px-2 leading-relaxed">
+                  {photographer.title}
+                </p>
+                <h3 className="text-lg font-light text-neutral-800 mb-4 tracking-tight px-2">
+                  {photographer.name}
+                </h3>
+                <Link
+                  to={`/about/profile/${photographer.id}`}
+                  className="inline-block px-5 py-1.5 bg-neutral-900 text-white rounded-full text-[10px] font-medium hover:bg-neutral-800 transition-all duration-300 shadow-sm hover:shadow-md"
+                >
+                  Know more
+                </Link>
+              </div>
             </div>
           ))}
         </div>

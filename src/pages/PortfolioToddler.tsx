@@ -1,60 +1,80 @@
-import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import heroToddler from "@/assets/hero_toddler.png";
+import portfolioToddler from "@/assets/portfolio-toddler.jpg";
 
 const PortfolioToddler = () => {
     return (
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen bg-[#FDFBF7]">
             <Navbar />
-            <main className="pt-20">
-                <section className="relative h-[60vh] overflow-hidden flex items-center justify-center">
-                    <div className="absolute inset-0 z-0 scale-110 animate-[zoom-in_20s_ease-out]">
-                        <img src={heroToddler} alt="Toddler Portfolio" className="w-full h-full object-cover" />
-                        <div className="absolute inset-0 bg-black/40" />
+            <main className="pt-24 pb-16">
+                {/* Hero-like Landing Section */}
+                <div className="relative h-[60vh] md:h-[70vh] mb-16 overflow-hidden">
+                    <img
+                        src={heroToddler}
+                        alt="Toddler Photography"
+                        className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black/30 flex items-center justify-center text-center px-6">
+                        <div className="max-w-4xl animate-in fade-in zoom-in duration-1000">
+                            <h1 className="text-5xl md:text-7xl font-light text-white mb-6 tracking-tight">
+                                Toddler Portfolio
+                            </h1>
+                            <p className="text-xl md:text-2xl text-white/90 font-light italic mb-8">
+                                Action, laughter, and the beautiful chaos of childhood
+                            </p>
+                        </div>
                     </div>
-                    <div className="relative z-10 text-center px-4">
-                        <h1 className="text-4xl md:text-7xl font-light text-white uppercase tracking-[0.3em] mb-6 drop-shadow-2xl">
-                            Toddler
-                        </h1>
-                        <div className="h-px w-32 bg-[#D4A574] mx-auto" />
-                    </div>
-                </section>
+                </div>
 
-                <section className="py-24 container mx-auto px-4">
-                    <div className="max-w-4xl mx-auto text-center mb-16">
-                        <p className="text-xl text-neutral-600 font-light leading-relaxed italic">
-                            "Action, laughter, and the beautiful chaos of being a toddler."
+                <div className="container mx-auto px-4">
+                    <div className="max-w-3xl mx-auto text-center mb-16 text-neutral-600 leading-relaxed">
+                        <p className="text-lg mb-6">
+                            Toddlers are a whirlwind of energy and pure emotion.
+                            Our toddler sessions are designed to be fun and flexible,
+                            allowing your child to play and explore while we capture
+                            the genuine laughter, curious glances, and unique
+                            personality traits that make this age so special.
                         </p>
+
+                        {/* Action Buttons */}
+                        <div className="flex flex-col sm:flex-row gap-6 justify-center mt-12">
+                            <Link
+                                to="/portfolio/toddler/packages"
+                                className="px-10 py-5 bg-[#7D8C62] text-white rounded-full text-lg font-medium hover:bg-[#687652] hover:scale-105 transition-all duration-300 shadow-lg"
+                            >
+                                Toddler Packages
+                            </Link>
+                            <Link
+                                to="/portfolio/toddler/themes"
+                                className="px-10 py-5 border-2 border-[#7D8C62] text-[#7D8C62] rounded-full text-lg font-medium hover:bg-[#7D8C62] hover:text-white hover:scale-105 transition-all duration-300 shadow-lg"
+                            >
+                                Themes & Props
+                            </Link>
+                        </div>
                     </div>
 
-                    <div className="flex flex-col md:flex-row gap-8 justify-center items-center max-w-4xl mx-auto">
-                        <Link
-                            to="/portfolio/toddler/packages"
-                            className="group relative w-full md:w-1/2 aspect-[16/9] overflow-hidden rounded-[2rem] shadow-2xl transition-transform duration-500 hover:-translate-y-2"
-                        >
-                            <img src={heroToddler} alt="Toddler Packages" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                            <div className="absolute inset-0 bg-[#152615]/60 flex items-center justify-center">
-                                <span className="text-white text-lg uppercase tracking-[0.3em] font-semibold border-b border-white/30 pb-2 group-hover:border-[#D4A574]">
-                                    Toddler Packages
-                                </span>
-                            </div>
-                        </Link>
-
-                        <Link
-                            to="/portfolio/toddler/themes"
-                            className="group relative w-full md:w-1/2 aspect-[16/9] overflow-hidden rounded-[2rem] shadow-2xl transition-transform duration-500 hover:-translate-y-2"
-                        >
-                            <img src={heroToddler} alt="Toddler Themes" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 shadow-inner" />
-                            <div className="absolute inset-0 bg-white/40 backdrop-blur-[2px] flex items-center justify-center">
-                                <span className="text-[#152615] text-lg uppercase tracking-[0.3em] font-semibold border-b border-[#152615]/30 pb-2 group-hover:border-[#D4A574]">
-                                    Props & Themes
-                                </span>
-                            </div>
-                        </Link>
+                    {/* Featured Gallery Preview */}
+                    <div className="mt-20">
+                        <h2 className="text-3xl font-light text-center mb-12 text-neutral-900">Featured Moments</h2>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {[1, 2, 3, 4, 5, 6].map((idx) => (
+                                <div
+                                    key={idx}
+                                    className="relative overflow-hidden rounded-3xl aspect-[4/5] group shadow-sm hover:shadow-xl transition-all duration-500"
+                                >
+                                    <img
+                                        src={portfolioToddler}
+                                        alt={`Toddler featured ${idx}`}
+                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    />
+                                    <div className="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/10 transition-colors duration-500" />
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                </section>
+                </div>
             </main>
             <Footer />
         </div>

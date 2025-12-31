@@ -5,10 +5,7 @@ interface LogoProps {
     variant?: 'light' | 'dark' | 'transparent';
 }
 
-const Logo: React.FC<LogoProps> = ({ className = "h-12 w-auto", variant = 'transparent' }) => {
-    // Use CSS variables for better match with theme, falling back to hardcoded defaults
-    const cream = "hsl(40, 25%, 95%)";
-
+const Logo: React.FC<LogoProps> = ({ className = "h-12 w-auto" }) => {
     return (
         <div className={`flex items-center ${className}`}>
             <svg
@@ -20,7 +17,7 @@ const Logo: React.FC<LogoProps> = ({ className = "h-12 w-auto", variant = 'trans
                 className="w-full h-full"
             >
                 {/* Camera Icon - Soft Rounded Edges */}
-                <g stroke={cream} strokeWidth="2.5" fill="none">
+                <g stroke="currentColor" strokeWidth="2.5" fill="none">
                     <rect
                         x="5"
                         y="14"
@@ -43,7 +40,7 @@ const Logo: React.FC<LogoProps> = ({ className = "h-12 w-auto", variant = 'trans
                     cx="38"
                     cy="20"
                     r="2"
-                    fill={cream}
+                    fill="currentColor"
                 />
             </svg>
         </div>

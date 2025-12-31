@@ -40,53 +40,59 @@ const About = () => {
           </section>
 
           {/* Photographers */}
-          <section className="flex flex-col md:flex-row items-center md:items-start justify-center gap-12 mb-24">
+          <section className="flex flex-col md:flex-row items-center justify-center gap-10 mb-24">
             {/* Sachin */}
-            <div className="text-center max-w-sm group">
-              <div className="relative mb-6 overflow-hidden rounded-2xl shadow-2xl">
+            <div className="bg-white rounded-[2rem] shadow-xl overflow-hidden max-w-[420px] w-full group transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+              <div className="relative h-[250px] md:h-[280px] overflow-hidden">
                 <img
                   src={photographerMale}
                   alt="Sachin Subhash Bhor"
-                  className="w-full h-[400px] md:w-72 md:h-96 object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"
                 />
+                <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
-              <p className="text-xs md:text-sm text-muted-foreground mb-2 px-4">
-                Fine Artist, Maternity, Baby, Child Photographer & Mentor
-              </p>
-              <h3 className="text-xl md:text-2xl font-heading text-secondary mb-3">
-                Sachin Subhash Bhor
-              </h3>
-              <Link
-                to="/about/profile/sachin"
-                className="inline-block text-sm font-medium text-muted-foreground hover:text-secondary transition-colors underline underline-offset-4"
-              >
-                Know more
-              </Link>
+              <div className="p-6 text-center bg-white">
+                <p className="text-[10px] md:text-xs text-neutral-500 mb-2 px-2 leading-relaxed">
+                  Fine Artist, Maternity, Baby, Child Photographer & Mentor
+                </p>
+                <h3 className="text-xl md:text-2xl font-light text-neutral-800 mb-4 tracking-tight">
+                  Sachin Subhash Bhor
+                </h3>
+                <Link
+                  to="/about/profile/sachin"
+                  className="inline-block px-8 py-2 bg-neutral-900 text-white rounded-full text-xs font-medium hover:bg-neutral-800 transition-all duration-300 shadow-md hover:shadow-lg"
+                >
+                  Know more
+                </Link>
+              </div>
             </div>
 
             {/* Priyadarshani */}
-            <div className="text-center max-w-sm group">
-              <div className="relative mb-6 overflow-hidden rounded-2xl shadow-2xl">
+            <div className="bg-white rounded-[2rem] shadow-xl overflow-hidden max-w-[420px] w-full group transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+              <div className="relative h-[250px] md:h-[280px] overflow-hidden">
                 <img
                   src={photographerFemale}
                   alt="Priyadarshani Sachin Bhor"
-                  className="w-full h-[400px] md:w-72 md:h-96 object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"
                 />
+                <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
-              <p className="text-xs md:text-sm text-muted-foreground mb-2 px-4">
-                Fine Artist, Maternity, Newborn, Baby Photographer & Mom
-              </p>
-              <h3 className="text-xl md:text-2xl font-heading text-secondary mb-3">
-                Priyadarshani Sachin Bhor
-              </h3>
-              <Link
-                to="/about/profile/priyadarshani"
-                className="inline-block text-sm font-medium text-muted-foreground hover:text-secondary transition-colors underline underline-offset-4"
-              >
-                Know more
-              </Link>
+              <div className="p-6 text-center bg-white">
+                <p className="text-[10px] md:text-xs text-neutral-500 mb-2 px-2 leading-relaxed">
+                  Fine Artist, Maternity, Newborn, Baby Photographer & Mom
+                </p>
+                <h3 className="text-xl md:text-2xl font-light text-neutral-800 mb-4 tracking-tight">
+                  Priyadarshani Sachin Bhor
+                </h3>
+                <Link
+                  to="/about/profile/priyadarshani"
+                  className="inline-block px-8 py-2 bg-neutral-900 text-white rounded-full text-xs font-medium hover:bg-neutral-800 transition-all duration-300 shadow-md hover:shadow-lg"
+                >
+                  Know more
+                </Link>
+              </div>
             </div>
           </section>
 

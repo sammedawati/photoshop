@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Logo from "@/components/Logo";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Navbar = () => {
   const location = useLocation();
@@ -35,7 +36,7 @@ const Navbar = () => {
   // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
+      if (window.scrollY > 20) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -46,17 +47,21 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const isSolid = isScrolled || !isHome;
+  const isMobile = useIsMobile();
+  const isSolid = isMobile ? isScrolled : (isScrolled || !isHome);
 
-  const navbarClasses = `fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isSolid ? "bg-primary/95 backdrop-blur-md shadow-lg" : "bg-transparent"
+  const navbarClasses = `fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isSolid ? "bg-primary shadow-lg" : "bg-transparent"
     }`;
+
+  const navTextColor = (isSolid || (isHome && !isSolid) || isOpen) ? "text-white" : "text-primary";
+  const logoColor = (isSolid || (isHome && !isSolid) || isOpen) ? "text-white" : "text-primary";
 
   return (
     <nav className={navbarClasses}>
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo - Top Left */}
-          <Link to="/" className="flex items-center z-50">
+          <Link to="/" className={`flex items-center z-50 ${logoColor}`}>
             <Logo className="h-10 lg:h-12 w-auto transition-all duration-300 hover:scale-105" />
           </Link>
 
@@ -66,12 +71,12 @@ const Navbar = () => {
               <div key={item.name} className="relative group">
                 <Link
                   to={item.path}
-                  className="relative px-4 py-2 text-sm font-medium text-white transition-all duration-300 flex items-center gap-1 group"
+                  className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 flex items-center gap-1 group ${navTextColor}`}
                 >
                   <span className="relative">
                     {item.name}
                     {/* Elegant underline animation */}
-                    <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-white transform origin-left transition-transform duration-300 ${isActive(item.path) ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                    <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-current transform origin-left transition-transform duration-300 ${isActive(item.path) ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
                       }`}></span>
                   </span>
                   {item.hasDropdown && (
@@ -111,7 +116,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 text-white z-50"
+            className={`lg:hidden p-2 z-50 transition-colors duration-300 ${navTextColor}`}
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
