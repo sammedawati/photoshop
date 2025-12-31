@@ -1,80 +1,87 @@
 export interface BlogPost {
-    id: string;
-    title: string;
-    slug: string;
-    category: BlogCategory;
-    date: string;
-    author: string;
-    image: string;
-    excerpt: string;
-    content: string;
-    tags: string[];
+  id: string;
+  title: string;
+  slug: string;
+  category: BlogCategory;
+  date: string;
+  author: string;
+  image: string;
+  excerpt: string;
+  content: string;
+  tags: string[];
 }
 
 export type BlogCategory =
-    | "maternity"
-    | "newborn"
-    | "baby"
-    | "kids"
-    | "family"
-    | "events"
-    | "tips";
+  | "maternity"
+  | "newborn"
+  | "baby"
+  | "kids"
+  | "family"
+  | "events"
+  | "events"
+  | "tips";
+
+import portfolioMaternity from '../assets/portfolio-maternity.jpg';
+import portfolioNewborn from '../assets/portfolio-newborn.jpg';
+import portfolioBaby from '../assets/portfolio-baby.jpg';
+import portfolioBirthday from '../assets/portfolio-birthday.jpg';
+import portfolioFamily from '../assets/portfolio-family.jpg';
 
 export interface CategoryInfo {
-    name: BlogCategory;
-    title: string;
-    description: string;
+  name: BlogCategory;
+  title: string;
+  description: string;
 }
 
 export const blogCategories: CategoryInfo[] = [
-    {
-        name: "maternity",
-        title: "Maternity",
-        description: "Celebrating the beautiful journey of motherhood through stunning maternity photography"
-    },
-    {
-        name: "newborn",
-        title: "Newborn",
-        description: "Capturing the precious first moments of your newborn's life"
-    },
-    {
-        name: "baby",
-        title: "Baby",
-        description: "Documenting your baby's milestones and adorable moments"
-    },
-    {
-        name: "kids",
-        title: "Kids",
-        description: "Fun and creative photography sessions for children of all ages"
-    },
-    {
-        name: "family",
-        title: "Family",
-        description: "Creating timeless memories with your loved ones"
-    },
-    {
-        name: "events",
-        title: "Events",
-        description: "Capturing special celebrations and milestone events"
-    },
-    {
-        name: "tips",
-        title: "Photography Tips",
-        description: "Expert advice and tips for parents and photography enthusiasts"
-    }
+  {
+    name: "maternity",
+    title: "Maternity",
+    description: "Celebrating the beautiful journey of motherhood through stunning maternity photography"
+  },
+  {
+    name: "newborn",
+    title: "Newborn",
+    description: "Capturing the precious first moments of your newborn's life"
+  },
+  {
+    name: "baby",
+    title: "Baby",
+    description: "Documenting your baby's milestones and adorable moments"
+  },
+  {
+    name: "kids",
+    title: "Kids",
+    description: "Fun and creative photography sessions for children of all ages"
+  },
+  {
+    name: "family",
+    title: "Family",
+    description: "Creating timeless memories with your loved ones"
+  },
+  {
+    name: "events",
+    title: "Events",
+    description: "Capturing special celebrations and milestone events"
+  },
+  {
+    name: "tips",
+    title: "Photography Tips",
+    description: "Expert advice and tips for parents and photography enthusiasts"
+  }
 ];
 
 export const blogPosts: BlogPost[] = [
-    {
-        id: "1",
-        slug: "grace-culture-glow-motherhood",
-        title: "Grace, Culture & The Glow of Motherhood",
-        category: "maternity",
-        date: "Dec 01, 2025",
-        author: "Priyadarshani Bhor",
-        image: "/src/assets/portfolio-maternity.jpg",
-        excerpt: "A beautiful celebration of motherhood through traditional Indian maternity photography, capturing the radiant glow and cultural richness of this special journey.",
-        content: `
+  {
+    id: "1",
+    slug: "grace-culture-glow-motherhood",
+    title: "Grace, Culture & The Glow of Motherhood",
+    category: "maternity",
+    date: "Dec 01, 2025",
+    author: "Priyadarshani Bhor",
+    image: portfolioMaternity,
+    excerpt: "A beautiful celebration of motherhood through traditional Indian maternity photography, capturing the radiant glow and cultural richness of this special journey.",
+    content: `
       <p>Maternity photography is more than just taking pictures; it's about celebrating one of life's most beautiful journeys. In this session, we explored the perfect blend of traditional Indian culture and modern photography techniques to create timeless memories.</p>
       
       <h3>The Beauty of Traditional Attire</h3>
@@ -95,18 +102,18 @@ export const blogPosts: BlogPost[] = [
         <li>Relax and enjoy the experience – your happiness will shine through</li>
       </ul>
     `,
-        tags: ["maternity", "traditional", "cultural", "pregnancy"]
-    },
-    {
-        id: "2",
-        slug: "wrapped-love-colour-tiny-moments",
-        title: "Wrapped in Love, Colour & Tiny Moments - A Dreamy Newborn Photoshoot",
-        category: "newborn",
-        date: "Dec 01, 2025",
-        author: "Priyadarshani Bhor",
-        image: "/src/assets/portfolio-newborn.jpg",
-        excerpt: "A magical newborn photography session filled with soft colors, cozy wraps, and the tiniest details that make these first days so precious.",
-        content: `
+    tags: ["maternity", "traditional", "cultural", "pregnancy"]
+  },
+  {
+    id: "2",
+    slug: "wrapped-love-colour-tiny-moments",
+    title: "Wrapped in Love, Colour & Tiny Moments - A Dreamy Newborn Photoshoot",
+    category: "newborn",
+    date: "Dec 01, 2025",
+    author: "Priyadarshani Bhor",
+    image: portfolioNewborn,
+    excerpt: "A magical newborn photography session filled with soft colors, cozy wraps, and the tiniest details that make these first days so precious.",
+    content: `
       <p>There's something incredibly special about newborn photography. Those first few weeks pass by in a blur, but through photography, we can freeze these precious moments forever.</p>
       
       <h3>The Art of Newborn Posing</h3>
@@ -121,18 +128,18 @@ export const blogPosts: BlogPost[] = [
       <h3>Best Time for Newborn Photos</h3>
       <p>The ideal window for newborn photography is within the first 5-14 days after birth. During this time, babies are still very sleepy and curly, making it easier to capture those adorable poses.</p>
     `,
-        tags: ["newborn", "baby", "photography tips", "posing"]
-    },
-    {
-        id: "3",
-        slug: "baby-riya-newborn-session",
-        title: "Baby Riya's Newborn Photo Session: A Bundle of Joy",
-        category: "newborn",
-        date: "Oct 09, 2023",
-        author: "Priyadarshani Bhor",
-        image: "/src/assets/portfolio-baby.jpg",
-        excerpt: "Meet baby Riya! A heartwarming newborn session capturing the pure joy and love of a new family.",
-        content: `
+    tags: ["newborn", "baby", "photography tips", "posing"]
+  },
+  {
+    id: "3",
+    slug: "baby-riya-newborn-session",
+    title: "Baby Riya's Newborn Photo Session: A Bundle of Joy",
+    category: "newborn",
+    date: "Oct 09, 2023",
+    author: "Priyadarshani Bhor",
+    image: portfolioBaby,
+    excerpt: "Meet baby Riya! A heartwarming newborn session capturing the pure joy and love of a new family.",
+    content: `
       <p>Every newborn session is unique, and baby Riya's session was filled with so much love and warmth. From the moment her parents walked in, you could feel the joy radiating from this new family.</p>
       
       <h3>A Personalized Session</h3>
@@ -144,18 +151,18 @@ export const blogPosts: BlogPost[] = [
       <h3>Creating a Comfortable Environment</h3>
       <p>We keep our studio warm and cozy, perfect for keeping newborns comfortable and sleepy. Soft music, gentle handling, and patience are key to a successful newborn session.</p>
     `,
-        tags: ["newborn", "family", "baby photography"]
-    },
-    {
-        id: "4",
-        slug: "kavya-pre-birthday-wonderland",
-        title: "Kavya's Pre-Birthday Bliss: A Fun Wonderland!",
-        category: "kids",
-        date: "Oct 09, 2023",
-        author: "Priyadarshani Bhor",
-        image: "/src/assets/portfolio-birthday.jpg",
-        excerpt: "A whimsical and colorful pre-birthday photoshoot celebrating Kavya's upcoming milestone with joy, laughter, and lots of fun!",
-        content: `
+    tags: ["newborn", "family", "baby photography"]
+  },
+  {
+    id: "4",
+    slug: "kavya-pre-birthday-wonderland",
+    title: "Kavya's Pre-Birthday Bliss: A Fun Wonderland!",
+    category: "kids",
+    date: "Oct 09, 2023",
+    author: "Priyadarshani Bhor",
+    image: portfolioBirthday,
+    excerpt: "A whimsical and colorful pre-birthday photoshoot celebrating Kavya's upcoming milestone with joy, laughter, and lots of fun!",
+    content: `
       <p>Pre-birthday photoshoots are a wonderful way to celebrate your child's upcoming milestone. For Kavya's session, we created a magical wonderland filled with balloons, colors, and endless fun!</p>
       
       <h3>Theme and Decoration</h3>
@@ -175,18 +182,18 @@ export const blogPosts: BlogPost[] = [
         <li>Don't stress about perfection – candid moments are the best!</li>
       </ul>
     `,
-        tags: ["kids", "birthday", "cake smash", "celebration"]
-    },
-    {
-        id: "5",
-        slug: "batman-dark-knight-first-birthday",
-        title: "BATMAN: Dark Knight's 1st Birthday in Style!",
-        category: "events",
-        date: "Oct 09, 2023",
-        author: "Priyadarshani Bhor",
-        image: "/src/assets/portfolio-birthday.jpg",
-        excerpt: "An epic Batman-themed first birthday celebration captured in all its superhero glory!",
-        content: `
+    tags: ["kids", "birthday", "cake smash", "celebration"]
+  },
+  {
+    id: "5",
+    slug: "batman-dark-knight-first-birthday",
+    title: "BATMAN: Dark Knight's 1st Birthday in Style!",
+    category: "events",
+    date: "Oct 09, 2023",
+    author: "Priyadarshani Bhor",
+    image: portfolioBirthday,
+    excerpt: "An epic Batman-themed first birthday celebration captured in all its superhero glory!",
+    content: `
       <p>When parents want to go all out for their child's first birthday, magic happens! This Batman-themed celebration was nothing short of spectacular, and we were thrilled to capture every heroic moment.</p>
       
       <h3>The Dark Knight Theme</h3>
@@ -205,18 +212,18 @@ export const blogPosts: BlogPost[] = [
       <h3>Making Memories Last</h3>
       <p>First birthdays are milestone events that families cherish forever. Through professional photography, these memories are preserved in stunning detail, allowing families to relive these special moments for years to come.</p>
     `,
-        tags: ["events", "birthday", "themed party", "first birthday"]
-    },
-    {
-        id: "6",
-        slug: "how-to-choose-newborn-photographer",
-        title: "How to Choose the Perfect Newborn Baby Photographer",
-        category: "tips",
-        date: "Aug 03, 2023",
-        author: "Priyadarshani Bhor",
-        image: "/src/assets/portfolio-family.jpg",
-        excerpt: "Expert guidance on selecting the right newborn photographer to capture your baby's precious first moments safely and beautifully.",
-        content: `
+    tags: ["events", "birthday", "themed party", "first birthday"]
+  },
+  {
+    id: "6",
+    slug: "how-to-choose-newborn-photographer",
+    title: "How to Choose the Perfect Newborn Baby Photographer",
+    category: "tips",
+    date: "Aug 03, 2023",
+    author: "Priyadarshani Bhor",
+    image: portfolioFamily,
+    excerpt: "Expert guidance on selecting the right newborn photographer to capture your baby's precious first moments safely and beautifully.",
+    content: `
       <p>Choosing a newborn photographer is an important decision. You're trusting someone to handle your precious baby and create memories that will last a lifetime. Here's what you need to know.</p>
       
       <h3>Safety First</h3>
@@ -260,18 +267,18 @@ export const blogPosts: BlogPost[] = [
       
       <p>Taking the time to choose the right photographer ensures you'll have beautiful, safe, and meaningful photos of your newborn that you'll treasure forever.</p>
     `,
-        tags: ["tips", "newborn", "photography advice", "parents guide"]
-    },
-    {
-        id: "7",
-        slug: "family-photography-tips",
-        title: "Creating Timeless Family Portraits: A Complete Guide",
-        category: "family",
-        date: "Nov 15, 2025",
-        author: "Priyadarshani Bhor",
-        image: "/src/assets/portfolio-family.jpg",
-        excerpt: "Learn how to prepare for and make the most of your family photography session with these expert tips and insights.",
-        content: `
+    tags: ["tips", "newborn", "photography advice", "parents guide"]
+  },
+  {
+    id: "7",
+    slug: "family-photography-tips",
+    title: "Creating Timeless Family Portraits: A Complete Guide",
+    category: "family",
+    date: "Nov 15, 2025",
+    author: "Priyadarshani Bhor",
+    image: portfolioFamily,
+    excerpt: "Learn how to prepare for and make the most of your family photography session with these expert tips and insights.",
+    content: `
       <p>Family photography is about capturing the love, connection, and unique dynamics of your family. Here's how to ensure your family session results in photos you'll cherish for generations.</p>
       
       <h3>Coordinating Outfits</h3>
@@ -286,18 +293,18 @@ export const blogPosts: BlogPost[] = [
       <h3>Natural Interactions</h3>
       <p>The best family photos capture genuine moments. We encourage families to interact naturally – play games, share jokes, cuddle together. These authentic moments create the most meaningful images.</p>
     `,
-        tags: ["family", "photography tips", "portraits"]
-    },
-    {
-        id: "8",
-        slug: "maternity-photography-preparation",
-        title: "Preparing for Your Maternity Photoshoot: What to Expect",
-        category: "maternity",
-        date: "Nov 10, 2025",
-        author: "Priyadarshani Bhor",
-        image: "/src/assets/portfolio-maternity.jpg",
-        excerpt: "Everything you need to know to prepare for a beautiful and comfortable maternity photography session.",
-        content: `
+    tags: ["family", "photography tips", "portraits"]
+  },
+  {
+    id: "8",
+    slug: "maternity-photography-preparation",
+    title: "Preparing for Your Maternity Photoshoot: What to Expect",
+    category: "maternity",
+    date: "Nov 10, 2025",
+    author: "Priyadarshani Bhor",
+    image: portfolioMaternity,
+    excerpt: "Everything you need to know to prepare for a beautiful and comfortable maternity photography session.",
+    content: `
       <p>Maternity photography celebrates the beautiful journey of pregnancy. Here's how to prepare for a session that captures this special time perfectly.</p>
       
       <h3>When to Schedule</h3>
@@ -312,25 +319,25 @@ export const blogPosts: BlogPost[] = [
       <h3>Comfort is Key</h3>
       <p>We keep sessions relaxed and comfortable. Take breaks when needed, and don't hesitate to communicate if you need anything. Your comfort ensures the best results.</p>
     `,
-        tags: ["maternity", "pregnancy", "photography tips", "preparation"]
-    }
+    tags: ["maternity", "pregnancy", "photography tips", "preparation"]
+  }
 ];
 
 // Helper functions
 export const getPostBySlug = (slug: string): BlogPost | undefined => {
-    return blogPosts.find(post => post.slug === slug);
+  return blogPosts.find(post => post.slug === slug);
 };
 
 export const getPostsByCategory = (category: BlogCategory): BlogPost[] => {
-    return blogPosts.filter(post => post.category === category);
+  return blogPosts.filter(post => post.category === category);
 };
 
 export const getRelatedPosts = (currentPostId: string, category: BlogCategory, limit: number = 3): BlogPost[] => {
-    return blogPosts
-        .filter(post => post.category === category && post.id !== currentPostId)
-        .slice(0, limit);
+  return blogPosts
+    .filter(post => post.category === category && post.id !== currentPostId)
+    .slice(0, limit);
 };
 
 export const getCategoryInfo = (category: BlogCategory): CategoryInfo | undefined => {
-    return blogCategories.find(cat => cat.name === category);
+  return blogCategories.find(cat => cat.name === category);
 };
