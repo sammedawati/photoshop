@@ -14,7 +14,7 @@ const Blog = () => {
     : blogPosts.filter(post => post.category === selectedCategory);
 
   return (
-    <div className="min-h-screen bg-card">
+    <div className="min-h-screen bg-[var(--background)]">
       <Navbar />
       <main>
         <PageHeader
@@ -22,18 +22,15 @@ const Blog = () => {
           subtitle="Stories, tips, and insights from our photography journey"
           variant="minimal"
         />
-        <div className="container mx-auto px-4 py-16">
-          <div className="mb-12 text-center animate-fade-in">
-          </div>
-
+        <div className="container mx-auto px-4 pt-4">
           {/* Category Filter */}
           <div className="mb-12 animate-fade-in" style={{ animationDelay: "100ms" }}>
             <div className="flex flex-wrap justify-center gap-3">
               <button
                 onClick={() => setSelectedCategory("all")}
                 className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${selectedCategory === "all"
-                  ? "bg-terracotta-light text-white shadow-lg scale-105"
-                  : "bg-secondary/5 text-secondary hover:bg-secondary/10"
+                  ? "bg-terracotta-light text-black shadow-lg scale-105"
+                  : "bg-secondary/5 text-secondary hover:bg-secondary/10 hover:text-black"
                   }`}
               >
                 All Posts
@@ -43,8 +40,8 @@ const Blog = () => {
                   key={category.name}
                   onClick={() => setSelectedCategory(category.name)}
                   className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${selectedCategory === category.name
-                    ? "bg-terracotta-light text-white shadow-lg scale-105"
-                    : "bg-secondary/5 text-secondary hover:bg-secondary/10"
+                    ? "bg-terracotta-light text-black shadow-lg scale-105"
+                    : "bg-secondary/5 text-secondary hover:bg-secondary/10 hover:text-black"
                     }`}
                 >
                   {category.title}
@@ -53,10 +50,6 @@ const Blog = () => {
             </div>
           </div>
 
-          {/* Results Count */}
-          <div className="mb-6 text-center text-sm text-muted-foreground animate-fade-in" style={{ animationDelay: "200ms" }}>
-            Showing {filteredPosts.length} {filteredPosts.length === 1 ? 'post' : 'posts'}
-          </div>
 
           {/* Blog Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

@@ -6,11 +6,11 @@ import portfolioNewborn from "@/assets/portfolio-newborn.jpg";
 
 const PortfolioNewborn = () => {
     return (
-        <div className="min-h-screen bg-[#FDFBF7]">
+        <div className="min-h-screen bg-[var(--background)]">
             <Navbar />
-            <main className="pt-24 pb-16">
+            <main className="pt-20 pb-10">
                 {/* Hero-like Landing Section */}
-                <div className="relative h-[60vh] md:h-[70vh] mb-16 overflow-hidden">
+                <div className="relative h-[60vh] md:h-[70vh] mb-8 overflow-hidden">
                     <img
                         src={heroNewborn}
                         alt="Newborn Photography"
@@ -29,7 +29,7 @@ const PortfolioNewborn = () => {
                 </div>
 
                 <div className="container mx-auto px-4">
-                    <div className="max-w-3xl mx-auto text-center mb-16 text-neutral-600 leading-relaxed">
+                    <div className="max-w-3xl mx-auto text-center mb-8 text-neutral-600 leading-relaxed">
                         <p className="text-lg mb-6">
                             The ideal time for a Newborn Shoot is between 5 to 14 days old.
                             During this period, babies tend to sleep deeply, allowing for those
@@ -42,7 +42,7 @@ const PortfolioNewborn = () => {
                         <div className="flex flex-col sm:flex-row gap-6 justify-center mt-12">
                             <Link
                                 to="/portfolio/newborn/packages"
-                                className="px-10 py-5 bg-[#7D8C62] text-white rounded-full text-lg font-medium hover:bg-[#687652] hover:scale-105 transition-all duration-300 shadow-lg"
+                                className="px-10 py-5 bg-white border-2 border-[#7D8C62] text-[#7D8C62] rounded-full text-lg font-medium hover:bg-[#7D8C62] hover:text-white hover:scale-105 transition-all duration-300 shadow-lg"
                             >
                                 Newborn Packages
                             </Link>
@@ -56,8 +56,8 @@ const PortfolioNewborn = () => {
                     </div>
 
                     {/* Featured Gallery Preview */}
-                    <div className="mt-20">
-                        <h2 className="text-3xl font-light text-center mb-12 text-neutral-900">Featured Moments</h2>
+                    <div className="mt-12">
+                        <h2 className="text-3xl font-light text-center mb-8 text-neutral-900">Featured Moments</h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                             {[1, 2, 3, 4, 5, 6].map((idx) => (
                                 <div

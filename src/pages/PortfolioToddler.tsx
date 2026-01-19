@@ -6,7 +6,7 @@ import portfolioToddler from "@/assets/portfolio-toddler.jpg";
 
 const PortfolioToddler = () => {
     return (
-        <div className="min-h-screen bg-[#FDFBF7]">
+        <div className="min-h-screen bg-[var(--background)]">
             <Navbar />
             <main className="pt-24 pb-16">
                 {/* Hero-like Landing Section */}
@@ -42,7 +42,7 @@ const PortfolioToddler = () => {
                         <div className="flex flex-col sm:flex-row gap-6 justify-center mt-12">
                             <Link
                                 to="/portfolio/toddler/packages"
-                                className="px-10 py-5 bg-[#7D8C62] text-white rounded-full text-lg font-medium hover:bg-[#687652] hover:scale-105 transition-all duration-300 shadow-lg"
+                                className="px-10 py-5 bg-white border-2 border-[#7D8C62] text-[#7D8C62] rounded-full text-lg font-medium hover:bg-[#7D8C62] hover:text-white hover:scale-105 transition-all duration-300 shadow-lg"
                             >
                                 Toddler Packages
                             </Link>

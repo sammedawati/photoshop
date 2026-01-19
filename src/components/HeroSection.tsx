@@ -65,7 +65,7 @@ const HeroSection = () => {
   }, [emblaApi, onSelect]);
 
   return (
-    <section className="relative overflow-hidden h-[80vh] md:h-screen w-full bg-neutral-900">
+    <section className="relative overflow-hidden h-[80vh] md:h-screen w-full bg-[var(--background)]">
       <div className="embla h-full w-full" ref={emblaRef}>
         <div className="embla__container h-full w-full flex">
           {slides.map((slide, index) => (

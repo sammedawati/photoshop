@@ -21,17 +21,25 @@ const dressPairs = [
 
 const MaternityDresses = () => {
     return (
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen bg-[var(--background)] selection:bg-[#C8A26A]/30">
             <Navbar />
             <main className="pt-24 pb-16">
                 <div className="container mx-auto px-4">
-                    <Link
-                        to="/portfolio/maternity"
-                        className="inline-flex items-center text-neutral-400 hover:text-neutral-900 mb-12 transition-colors text-xs uppercase tracking-[0.2em]"
-                    >
-                        <ChevronLeft className="w-4 h-4 mr-1" />
-                        Back to Maternity
-                    </Link>
+                    {/* Category Toggle Buttons */}
+                    <div className="flex justify-center gap-6 mb-16">
+                        <Link
+                            to="/portfolio/maternity/packages"
+                            className="px-10 py-5 border-2 border-[#7D8C62] text-[#7D8C62] bg-transparent rounded-full text-lg font-medium hover:bg-[#7D8C62] hover:text-white transition-all duration-300 shadow-lg"
+                        >
+                            Maternity Packages
+                        </Link>
+                        <Link
+                            to="/portfolio/maternity/dresses"
+                            className="px-10 py-5 bg-[#7D8C62] text-white rounded-full text-lg font-medium hover:bg-[#687652] transition-all duration-300 shadow-lg"
+                        >
+                            Maternity Dresses
+                        </Link>
+                    </div>
 
                     <div className="text-center mb-20">
                         <h1 className="text-4xl md:text-5xl font-light text-neutral-800 uppercase tracking-widest mb-6 italic">
@@ -61,7 +69,7 @@ const MaternityDresses = () => {
                                     ))}
                                 </div>
                                 <div className="text-center">
-                                    <h3 className="text-sm uppercase tracking-[0.4em] text-neutral-400 font-light group-hover:text-[#D4A574] transition-colors duration-500">
+                                    <h3 className="text-sm tracking-[0.4em] text-neutral-400 font-light group-hover:text-[#D4A574] transition-colors duration-500">
                                         {pair.title}
                                     </h3>
                                 </div>
@@ -70,11 +78,11 @@ const MaternityDresses = () => {
                     </div>
 
                     <div className="mt-40 text-center py-20 border-t border-neutral-100">
-                        <h2 className="text-2xl font-light uppercase tracking-widest mb-6">Book Your Session</h2>
+                        <h2 className="text-2xl font-light tracking-widest mb-6">Book Your Session</h2>
                         <p className="text-neutral-400 text-sm mb-12 italic">Let's create something beautiful together.</p>
                         <Link
                             to="/contact"
-                            className="inline-block border border-neutral-800 text-neutral-800 px-12 py-4 rounded-full hover:bg-neutral-800 hover:text-white transition-all duration-500 text-xs uppercase tracking-widest"
+                            className="inline-block border border-neutral-800 text-neutral-800 px-12 py-4 rounded-full hover:bg-neutral-800 hover:text-white transition-all duration-500 text-xs tracking-widest"
                         >
                             Get in Touch
                         </Link>

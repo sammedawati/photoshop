@@ -24,7 +24,7 @@ const portfolioCategories = [
 
 const Portfolio = () => {
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#D4A574' }}>
+    <div className="min-h-screen bg-[var(--background)]">
       <Navbar />
       <main>
         <PageHeader

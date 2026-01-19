@@ -1,13 +1,13 @@
 const PartnersSection = () => {
   return (
-    <section className="py-16 bg-card">
+    <section className="bg-[var(--background)]">
       <div className="container mx-auto px-4">
         <h2 className="section-title mb-12">Our Partners</h2>
 
         <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24">
           {/* Partner 1 */}
           <div className="text-center">
-            <div className="w-48 h-32 bg-muted rounded-lg flex items-center justify-center mb-4 border border-border">
+            <div className="w-48 h-32 bg-white rounded-lg flex items-center justify-center mb-4 border border-border mx-auto">
               <div className="text-center">
                 <span className="text-3xl font-bold text-secondary">papa</span>
                 <p className="text-xs text-muted-foreground mt-1">PHOTOGRAPHY</p>
@@ -22,7 +22,7 @@ const PartnersSection = () => {
 
           {/* Partner 2 */}
           <div className="text-center">
-            <div className="w-48 h-32 bg-muted rounded-lg flex items-center justify-center mb-4 border border-border">
+            <div className="w-48 h-32 bg-white rounded-lg flex items-center justify-center mb-4 border border-border mx-auto">
               <div className="text-center">
                 <span className="text-3xl font-bold text-secondary">vivah</span>
                 <p className="text-xs text-muted-foreground">|| PHOTOS ||</p>

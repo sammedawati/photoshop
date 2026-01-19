@@ -22,7 +22,7 @@ const studioImages = [
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-card">
+    <div className="min-h-screen bg-[var(--background)]">
       <Navbar />
       <main>
         <PageHeader
@@ -31,16 +31,16 @@ const About = () => {
           variant="minimal"
         />
 
-        <div className="container mx-auto px-4 py-16">
+        <div className="container mx-auto px-4 py-10">
           {/* Intro Text */}
-          <section className="text-center mb-16">
+          <section className="text-center mb-8">
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Hello, We are Priyadarshani & Sachin.
             </p>
           </section>
 
           {/* Photographers */}
-          <section className="flex flex-col md:flex-row items-center justify-center gap-10 mb-24">
+          <section className="flex flex-col md:flex-row items-center justify-center gap-10 mb-12">
             {/* Sachin */}
             <div className="bg-white rounded-[2rem] shadow-xl overflow-hidden max-w-[420px] w-full group transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
               <div className="relative h-[250px] md:h-[280px] overflow-hidden">
@@ -52,7 +52,7 @@ const About = () => {
                 />
                 <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
-              <div className="p-6 text-center bg-white">
+              <div className="p-4 text-center bg-white">
                 <p className="text-[10px] md:text-xs text-neutral-500 mb-2 px-2 leading-relaxed">
                   Fine Artist, Maternity, Baby, Child Photographer & Mentor
                 </p>
@@ -97,7 +97,7 @@ const About = () => {
           </section>
 
           {/* How We Started */}
-          <section className="max-w-4xl mx-auto mb-24 px-4">
+          <section className="max-w-4xl mx-auto mb-12 px-4">
             <h2 className="text-3xl font-heading text-secondary text-center mb-10">
               How we started
             </h2>
@@ -118,7 +118,7 @@ const About = () => {
           </section>
 
           {/* Our Studio */}
-          <section className="mb-16">
+          <section className="mb-10">
             <h2 className="text-3xl font-heading text-secondary text-center mb-10">
               Our Studio
             </h2>

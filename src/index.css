@@ -6,58 +6,65 @@
 
 @layer base {
   :root {
-    /* Main Brand Colors */
-    --background: 40 33% 96%;
-    --foreground: 25 20% 20%;
+    /* Main Brand Colors - Soft Luxury */
+    --background: 30 25% 97%;
+    /* #FBF6F2 - Warm Cream */
+    --foreground: 78 15% 20%;
+    /* Dark Olive Grey for text */
 
     --card: 0 0% 100%;
-    --card-foreground: 25 20% 20%;
+    --card-foreground: 78 15% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 25 20% 20%;
+    --popover-foreground: 78 15% 20%;
 
-    /* Muted Olive Green - Primary */
-    --primary: 78 18% 30%;
+    /* Premium Palette */
+    --primary: 78 20% 32%;
+    /* #5B6342 - Muted Olive */
     --primary-foreground: 0 0% 100%;
 
-    /* Terracotta/Burnt Orange - Secondary/Accent */
-    --secondary: 25 55% 51%;
+    --secondary: 36 47% 60%;
+    /* #C8A26A - Soft Gold */
     --secondary-foreground: 0 0% 100%;
 
     --muted: 40 20% 90%;
-    --muted-foreground: 25 15% 45%;
+    --muted-foreground: 78 5% 45%;
 
-    --accent: 25 55% 51%;
+    --accent: 36 47% 60%;
+    /* Gold Accent */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 40 20% 85%;
-    --input: 40 20% 85%;
-    --ring: 78 30% 36%;
+    --border: 40 20% 90%;
+    --input: 40 20% 90%;
+    --ring: 36 47% 60%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
+    /* 16px */
 
     /* Custom Colors */
-    --cream: 40 25% 95%;
-    --cream-dark: 40 20% 90%;
-    --olive: 78 18% 30%;
+    --cream: 30 25% 97%;
+    --cream-dark: 30 20% 92%;
+    --olive: 78 20% 32%;
     --olive-light: 78 15% 42%;
-    --olive-dark: 78 20% 22%;
+    --olive-dark: 78 25% 22%;
+    --gold: 36 47% 60%;
+    --gold-light: 36 47% 75%;
+    --gold-dark: 36 50% 50%;
     --terracotta: 25 45% 48%;
-    --terracotta-light: 25 40% 58%;
-    --brown-dark: 25 20% 18%;
+    /* Keeping legacy just in case */
 
     /* Sidebar defaults */
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-background: 30 25% 97%;
+    --sidebar-foreground: 78 15% 20%;
+    --sidebar-primary: 78 20% 32%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 30 20% 92%;
+    --sidebar-accent-foreground: 78 20% 32%;
+    --sidebar-border: 40 20% 90%;
+    --sidebar-ring: 36 47% 60%;
   }
 
   .dark {

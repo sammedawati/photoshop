@@ -61,9 +61,9 @@ const portfolioItems = [
 
 const PortfolioSection = () => {
   return (
-    <section className="py-16 bg-olive-dark">
+    <section className="pt-10 pb-16 bg-gradient-to-b from-[#EBEFE6] to-[#FBF6F2]">
       <div className="container mx-auto px-4">
-        <h2 className="text-2xl md:text-3xl font-heading text-card text-center mb-12">
+        <h2 className="text-2xl md:text-3xl font-heading text-[#5B6342] text-center mb-6">
           CLICK on the image to view portfolio
         </h2>
 
@@ -76,7 +76,7 @@ const PortfolioSection = () => {
               style={{ animationDelay: `${index * 50}ms` }}
             >
               {/* Circular Image */}
-              <div className="portfolio-card w-28 h-28 xs:w-32 xs:h-32 md:w-40 md:h-40 mb-3 border-4 border-card/30 group-hover:border-secondary transition-all duration-300">
+              <div className="portfolio-card w-32 h-32 xs:w-40 xs:h-40 md:w-56 md:h-56 mb-3 border-4 border-white group-hover:border-[#C8A26A] transition-all duration-300 shadow-md group-hover:shadow-xl">
                 <img
                   src={item.image}
                   alt={item.title}
@@ -87,10 +87,10 @@ const PortfolioSection = () => {
               </div>
 
               {/* Title */}
-              <h3 className="text-sm md:text-base font-heading text-card group-hover:text-secondary transition-colors line-clamp-1">
+              <h3 className="text-sm md:text-base font-heading text-[#5B6342] transition-colors line-clamp-1 group-hover:text-[#C8A26A]">
                 {item.title}
               </h3>
-              <p className="text-[10px] md:text-xs text-card/70 line-clamp-1">{item.subtitle}</p>
+              <p className="text-[10px] md:text-xs text-[#5B6342]/70 line-clamp-1">{item.subtitle}</p>
             </Link>
           ))}
         </div>

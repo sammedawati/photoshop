@@ -51,7 +51,7 @@ const PhotographerProfile = () => {
     }
 
     return (
-        <div className="min-h-screen bg-card">
+        <div className="min-h-screen bg-[var(--background)]">
             <Navbar />
             <main>
                 <PageHeader

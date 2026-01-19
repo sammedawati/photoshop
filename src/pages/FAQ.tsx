@@ -77,15 +77,14 @@ const faqItems = [
 const FAQ = () => {
 
   return (
-    <div className="min-h-screen bg-card">
+    <div className="min-h-screen bg-[var(--background)]">
       <Navbar />
       <main>
         <PageHeader
-          title="FAQ - Frequently Asked Questions"
-          subtitle="Frequently Asked Questions"
+          title="Frequently Asked Questions"
           variant="minimal"
         />
-        <div className="container mx-auto px-4 max-w-4xl py-16">
+        <div className="container mx-auto px-4 max-w-4xl pt-6 pb-16">
           {/* Action Buttons */}
           <div className="flex gap-4 mb-8 justify-center">
             <Link to="/preparation-guide">

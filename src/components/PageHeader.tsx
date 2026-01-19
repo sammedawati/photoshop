@@ -10,8 +10,8 @@ interface PageHeaderProps {
 const PageHeader = ({ title, subtitle, backgroundImage, variant = 'image' }: PageHeaderProps) => {
     if (variant === 'minimal') {
         return (
-            <div className="pt-32 pb-16 text-center px-4 animate-fade-in">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading text-secondary mb-4">
+            <div className="pt-24 pb-4 text-center px-4 animate-fade-in">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-secondary mb-4 uppercase tracking-widest italic">
                     {title}
                 </h1>
                 {subtitle && (
@@ -39,7 +39,7 @@ const PageHeader = ({ title, subtitle, backgroundImage, variant = 'image' }: Pag
 
             {/* Content */}
             <div className="relative z-20 text-center px-4 animate-fade-in">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading text-white mb-4">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-white mb-4 uppercase tracking-widest italic">
                     {title}
                 </h1>
                 {subtitle && (

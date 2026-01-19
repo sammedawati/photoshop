@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { ChevronRight, Info } from "lucide-react";
+import { ChevronRight, Info, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import portfolioMaternity from "@/assets/portfolio-maternity.jpg";
 import heroNewborn from "@/assets/hero_newborn.png";
@@ -11,7 +11,7 @@ import heroSitter from "@/assets/hero_sitter.png";
 
 const MaternityPackages = () => {
     return (
-        <div className="min-h-screen bg-white font-sans selection:bg-[#D4A574]/30">
+        <div className="min-h-screen bg-[var(--background)] font-sans selection:bg-[#C8A26A]/30">
             <Navbar />
 
             {/* Main Content Start after Navbar */}
@@ -22,9 +22,25 @@ const MaternityPackages = () => {
 
 
                 <div className="container mx-auto px-4 pt-16">
+                    {/* Category Toggle Buttons */}
+                    <div className="flex justify-center gap-6 mb-16">
+                        <Link
+                            to="/portfolio/maternity/packages"
+                            className="px-10 py-5 bg-[#7D8C62] text-white rounded-full text-lg font-medium hover:bg-[#687652] transition-all duration-300 shadow-lg"
+                        >
+                            Maternity Packages
+                        </Link>
+                        <Link
+                            to="/portfolio/maternity/dresses"
+                            className="px-10 py-5 border-2 border-[#7D8C62] text-[#7D8C62] bg-transparent rounded-full text-lg font-medium hover:bg-[#7D8C62] hover:text-white transition-all duration-300 shadow-lg"
+                        >
+                            Maternity Dresses
+                        </Link>
+                    </div>
+
                     {/* Header Section */}
                     <header className="text-center mb-16">
-                        <h1 className="text-3xl md:text-5xl font-light text-neutral-800 tracking-[0.1em] uppercase mb-4">
+                        <h1 className="text-4xl md:text-5xl font-light text-black tracking-widest mb-6 italic">
                             Maternity Photography Packages
                         </h1>
                         <div className="h-[2px] w-24 bg-[#D4A574] mx-auto mb-12" />
@@ -64,10 +80,10 @@ const MaternityPackages = () => {
                     <section className="max-w-5xl mx-auto mb-20 bg-neutral-50/50 rounded-[2.5rem] p-8 md:p-12 border border-neutral-100 shadow-sm">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                             <div className="order-2 md:order-1">
-                                <h3 className="text-2xl md:text-3xl font-light text-[#D4A574] mb-8 uppercase tracking-[0.2em]">
+                                <h3 className="text-2xl md:text-3xl font-light text-[#D4A574] mb-8">
                                     Maternity Silver Shoot
                                 </h3>
-                                <ul className="space-y-4 mb-10 text-neutral-600 font-light">
+                                <ul className="space-y-4 mb-10 text-black font-light">
                                     {[
                                         "2 Theme", "Studio shoot", "15 Edited digital photos",
                                         "10-12 Raw unedited photos", "Total Time: 1 hour",
@@ -80,12 +96,10 @@ const MaternityPackages = () => {
                                         </li>
                                     ))}
                                 </ul>
-                                <div className="text-3xl font-light text-neutral-800 mb-8 tracking-tighter">
-                                    ₹10,000 <span className="text-sm font-light text-neutral-400 uppercase tracking-widest ml-2">Total</span>
+                                <div className="text-3xl font-light text-black mb-8 tracking-tighter">
+                                    ₹10,000
                                 </div>
-                                <button className="px-12 py-4 bg-[#D4A574] text-white rounded-full hover:bg-[#b08453] transition-all transform hover:scale-105 active:scale-95 uppercase text-xs tracking-[0.3em] font-semibold shadow-lg shadow-[#D4A574]/20">
-                                    Book Silver
-                                </button>
+
                             </div>
                             <div className="order-1 md:order-2 aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl relative group">
                                 <img src={portfolioMaternity} alt="Silver Package Sample" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
@@ -94,29 +108,31 @@ const MaternityPackages = () => {
                         </div>
                     </section>
 
-                    {/* Premium Section Header (Dark Green) */}
-                    <div className="bg-[#152615] rounded-t-[3rem] mt-32 px-6 py-10 md:py-16 text-center overflow-hidden relative">
-                        <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
-                            <div className="absolute inset-0 border-[20px] border-white/20 rounded-full scale-150 -translate-y-1/2" />
-                        </div>
-                        <div className="relative z-10 flex flex-col items-center gap-4">
-                            <span className="text-3xl">✨</span>
-                            <h2 className="text-xl md:text-3xl font-light text-white uppercase tracking-[0.4em] mb-2 leading-tight">
-                                Explore Premium Maternity <br className="hidden md:block" /> Shoot Packages
-                            </h2>
-                            <span className="text-3xl">✨</span>
-                            <div className="h-[1px] w-40 bg-[#D4A574]/50 mt-4" />
-                        </div>
-                    </div>
+                    {/* Premium Section - Light Olive Luxury Redesign */}
+                    <section className="relative mt-32 rounded-[3rem] overflow-hidden bg-gradient-to-b from-[#EBEFE6] to-[#FBF6F2] text-[var(--foreground)] py-24 px-6 md:px-12 shadow-sm border-t border-white/50 mx-4 md:mx-0">
+                        {/* Soft Texture Overlay */}
+                        <div className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-multiply" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }}></div>
 
-                    {/* Premium Packages Grid (Dark Green) */}
-                    <section className="bg-[#152615] text-white rounded-b-[3rem] px-8 md:px-16 pb-20 pt-10 shadow-2xl border-t border-white/5">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-16">
+                        {/* Header */}
+                        <div className="relative z-10 text-center mb-20">
+                            <div className="flex items-center justify-center gap-3 mb-4 text-[#C8A26A]">
+                                <Sparkles className="w-5 h-5 animate-pulse text-[#C8A26A]/70" />
+                                <span className="text-sm md:text-base tracking-[0.4em] uppercase font-light text-black">Exquisite Collections</span>
+                                <Sparkles className="w-5 h-5 animate-pulse text-[#C8A26A]/70" />
+                            </div>
+                            <h2 className="text-3xl md:text-5xl font-serif text-black mb-6 tracking-wide">
+                                Premium Maternity <span className="italic text-[#C8A26A]">Packages</span>
+                            </h2>
+                            <div className="h-[1px] w-24 bg-gradient-to-r from-transparent via-[#C8A26A] to-transparent mx-auto opacity-50" />
+                        </div>
+
+                        {/* Cards Grid */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 max-w-7xl mx-auto relative z-10">
                             {[
                                 {
-                                    name: "MATERNITY GOLD SHOOT",
+                                    name: "Gold",
                                     price: "₹18,000",
-                                    items: [
+                                    features: [
                                         "3 Themes", "Outdoor / Indoor shoot", "25 Edited digital photos",
                                         "All raw unedited photos", "Total Time: 2 hours",
                                         "Client Closet: 1 Dress", "Makeup & Hair Included",
@@ -124,9 +140,10 @@ const MaternityPackages = () => {
                                     ]
                                 },
                                 {
-                                    name: "MATERNITY PLATINUM SHOOT",
+                                    name: "Platinum",
                                     price: "₹30,000",
-                                    items: [
+                                    popular: true,
+                                    features: [
                                         "4 Themes", "Studio + Outdoor shoot", "45 Edited digital photos",
                                         "All raw unedited photos", "Total Time: 4 hours",
                                         "Client Closet: 2 Dress", "Hair & Makeup: 2 Looks",
@@ -134,9 +151,9 @@ const MaternityPackages = () => {
                                     ]
                                 },
                                 {
-                                    name: "MATERNITY DIAMOND SHOOT",
+                                    name: "Diamond",
                                     price: "₹55,000",
-                                    items: [
+                                    features: [
                                         "Unlimited Themes", "Any Location Access", "80 Edited digital photos",
                                         "Master Raw Gallery", "Full Day Coverage",
                                         "Candid Video Highlights", "Exclusive Closet Access",
@@ -144,57 +161,67 @@ const MaternityPackages = () => {
                                     ]
                                 }
                             ].map((pkg, i) => (
-                                <div key={i} className="flex flex-col h-full border-l border-white/10 pl-8 md:pl-10 group transition-all duration-500 hover:border-[#D4A574]/50">
-                                    <h4 className="text-lg md:text-xl font-light text-[#D4A574] mb-8 uppercase tracking-[0.25em] h-16 transition-colors group-hover:text-white">
-                                        {pkg.name}
-                                    </h4>
-                                    <ul className="space-y-4 mb-10 flex-grow text-white/60 font-light text-sm tracking-wide">
-                                        {pkg.items.map((item, idx) => (
-                                            <li key={idx} className="flex items-start gap-3">
-                                                <span className="text-[#D4A574] mt-1 shrink-0">•</span>
-                                                {item}
+                                <div key={i} className={`relative flex flex-col p-8 md:p-10 rounded-2xl border transition-all duration-300 group
+                                    ${pkg.popular
+                                        ? 'bg-white border-[#C8A26A]/30 shadow-[0_20px_40px_-10px_rgba(200,162,106,0.15)] md:-translate-y-4'
+                                        : 'bg-white/60 border-white/50 hover:bg-white hover:border-[#C8A26A]/20 hover:shadow-lg hover:-translate-y-2'
+                                    }`}>
+
+                                    {pkg.popular && (
+                                        <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-[#C8A26A] text-white text-[10px] font-bold tracking-[0.2em] uppercase rounded-full shadow-md">
+                                            Most Popular
+                                        </div>
+                                    )}
+
+                                    <div className="text-center mb-10">
+                                        <h3 className="text-2xl font-serif text-[#5B6342] mb-3">
+                                            {pkg.name}
+                                        </h3>
+                                        <div className="h-[1px] w-12 bg-[#C8A26A]/30 mx-auto" />
+                                    </div>
+
+                                    <ul className="space-y-5 mb-12 flex-grow">
+                                        {pkg.features.map((feature, idx) => (
+                                            <li key={idx} className="flex items-start gap-4 text-sm text-black font-light leading-relaxed transition-colors">
+                                                <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#C8A26A] shrink-0" />
+                                                {feature}
                                             </li>
                                         ))}
                                     </ul>
-                                    <div className="text-2xl font-light mb-10 tracking-tight text-white/90">
-                                        {pkg.price}
+
+                                    <div className="text-center mt-auto">
+                                        <div className="text-3xl md:text-4xl font-light text-black font-serif tracking-tight group-hover:scale-105 transition-transform">
+                                            {pkg.price}
+                                        </div>
                                     </div>
-                                    <button className="w-full py-4 border border-[#D4A574] text-[#D4A574] rounded-full hover:bg-[#D4A574] hover:text-white transition-all duration-500 text-[10px] uppercase tracking-[0.3em] font-semibold active:scale-95">
-                                        Inquire now
-                                    </button>
                                 </div>
                             ))}
                         </div>
 
-                        {/* Terms & Conditions Section */}
-                        <div className="mt-32 pt-20 border-t border-white/10">
-                            <div className="flex flex-col md:flex-row gap-12 max-w-5xl mx-auto">
-                                <div className="md:w-1/3 flex items-start gap-4">
-                                    <div className="p-3 bg-[#D4A574]/10 rounded-full">
-                                        <Info className="w-6 h-6 text-[#D4A574]" />
+                        {/* Terms & Conditions Section - Simplified/Refined */}
+                        <div className="mt-32 pt-16 border-t border-[#5B6342]/10 max-w-6xl mx-auto">
+                            <div className="grid md:grid-cols-[1fr_2fr] gap-12">
+                                <div className="flex items-center gap-4">
+                                    <div className="p-4 bg-white rounded-full border border-[#C8A26A]/20 shadow-sm">
+                                        <Info className="w-6 h-6 text-[#C8A26A]" />
                                     </div>
-                                    <div>
-                                        <h3 className="text-2xl font-light uppercase tracking-widest text-[#D4A574] mb-2 leading-none">
-                                            Terms & <br /> Condition
-                                        </h3>
-                                        <div className="h-0.5 w-12 bg-[#D4A574] mt-4" />
-                                    </div>
+                                    <h3 className="text-xl font-light tracking-[0.2em] text-[#5B6342]">
+                                        TERMS & <br /> CONDITIONS
+                                    </h3>
                                 </div>
-                                <div className="md:w-2/3">
-                                    <ul className="grid grid-cols-1 md:grid-cols-1 gap-6 text-white/50 font-light text-sm leading-relaxed">
-                                        {[
-                                            "Duration for photoshoot is limited as per package; extra charges for extended time.",
-                                            "The Package session fee is non-refundable, and it can only be rescheduled once with 7 days notice.",
-                                            "Raw photos will be delivered as per package specification; editing takes 3-4 weeks after final selection.",
-                                            "Client is responsible for any specific location entry fees or travel outside 20km radius."
-                                        ].map((text, i) => (
-                                            <li key={i} className="flex items-start gap-3">
-                                                <span className="text-[#D4A574] mt-1 shrink-0">◇</span>
-                                                {text}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
+                                <ul className="grid gap-4 text-[#5B6342]/70 font-light text-xs leading-relaxed">
+                                    {[
+                                        "Duration for photoshoot is limited as per package; extra charges for extended time.",
+                                        "The Package session fee is non-refundable, and it can only be rescheduled once with 7 days notice.",
+                                        "Raw photos will be delivered as per package specification; editing takes 3-4 weeks after final selection.",
+                                        "Client is responsible for any specific location entry fees or travel outside 20km radius."
+                                    ].map((term, i) => (
+                                        <li key={i} className="flex gap-3">
+                                            <span className="text-[#C8A26A] mt-0.5">◇</span>
+                                            {term}
+                                        </li>
+                                    ))}
+                                </ul>
                             </div>
                         </div>
                     </section>
@@ -203,7 +230,7 @@ const MaternityPackages = () => {
                     <section className="mt-40 mb-20 text-center">
                         <div className="flex items-center justify-center gap-6 mb-16">
                             <div className="h-px w-12 bg-neutral-200" />
-                            <h2 className="text-xl md:text-3xl font-light text-neutral-800 uppercase tracking-[0.2em]">
+                            <h2 className="text-xl md:text-3xl font-light text-neutral-800 tracking-[0.2em]">
                                 All Portfolio / Sub category Photo
                             </h2>
                             <div className="h-px w-12 bg-neutral-200" />
@@ -224,7 +251,7 @@ const MaternityPackages = () => {
                                     <div className="aspect-square rounded-full overflow-hidden mb-6 shadow-xl border-4 border-white ring-1 ring-neutral-100 transition-transform duration-500 group-hover:scale-105 active:scale-95">
                                         <img src={item.img} alt={item.name} className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0" />
                                     </div>
-                                    <h4 className="text-[10px] md:text-xs uppercase tracking-[0.3em] text-neutral-400 group-hover:text-[#D4A574] transition-colors font-semibold">
+                                    <h4 className="text-[10px] md:text-xs tracking-[0.3em] text-neutral-400 group-hover:text-[#D4A574] transition-colors font-semibold">
                                         {item.name} Shoot <br /> <span className="text-[8px] font-normal opacity-50 mt-1 inline-block">View</span>
                                     </h4>
                                 </Link>
@@ -236,12 +263,12 @@ const MaternityPackages = () => {
                     <div className="flex flex-col md:flex-row justify-between items-center gap-8 mt-40 pb-16 border-t border-neutral-100 pt-16">
                         <div className="flex gap-10">
                             {["Instagram", "Facebook", "Pinterest", "YouTube"].map((social) => (
-                                <a key={social} href="#" className="text-[10px] uppercase tracking-[0.3em] text-neutral-400 hover:text-[#D4A574] transition-colors font-medium">
+                                <a key={social} href="#" className="text-[10px] tracking-[0.3em] text-neutral-400 hover:text-[#D4A574] transition-colors font-medium">
                                     {social}
                                 </a>
                             ))}
                         </div>
-                        <div className="text-[9px] uppercase tracking-[0.4em] text-neutral-300 font-medium">
+                        <div className="text-[9px] tracking-[0.4em] text-neutral-300 font-medium">
                             Status: <span className="text-green-500/50">Online</span>
                         </div>
                     </div>

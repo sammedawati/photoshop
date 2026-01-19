@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { ChevronLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroToddler from "@/assets/hero_toddler.png";
 
@@ -14,17 +13,25 @@ const themePairs = [
 
 const ToddlerThemes = () => {
     return (
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen bg-[var(--background)] selection:bg-[#C8A26A]/30">
             <Navbar />
             <main className="pt-24 pb-16">
-                <div className="container mx-auto px-4">
-                    <Link
-                        to="/portfolio/toddler"
-                        className="inline-flex items-center text-neutral-400 hover:text-neutral-900 mb-12 transition-colors text-xs uppercase tracking-[0.2em]"
-                    >
-                        <ChevronLeft className="w-4 h-4 mr-1" />
-                        Back to Toddler
-                    </Link>
+                <div className="container mx-auto px-4 pt-16">
+                    {/* Category Toggle Buttons */}
+                    <div className="flex justify-center gap-6 mb-16">
+                        <Link
+                            to="/portfolio/toddler/packages"
+                            className="px-10 py-5 border-2 border-[#7D8C62] text-[#7D8C62] bg-transparent rounded-full text-lg font-medium hover:bg-[#7D8C62] hover:text-white transition-all duration-300 shadow-lg"
+                        >
+                            Toddler Packages
+                        </Link>
+                        <Link
+                            to="/portfolio/toddler/themes"
+                            className="px-10 py-5 bg-[#7D8C62] text-white rounded-full text-lg font-medium hover:bg-[#687652] transition-all duration-300 shadow-lg"
+                        >
+                            Toddler Themes
+                        </Link>
+                    </div>
 
                     <div className="text-center mb-20">
                         <h1 className="text-4xl md:text-5xl font-light text-neutral-800 uppercase tracking-widest mb-6 italic">
