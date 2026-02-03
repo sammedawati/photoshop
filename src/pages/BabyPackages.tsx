@@ -13,12 +13,12 @@ const BabyPackages = () => {
     return (
         <div className="min-h-screen bg-[var(--background)] font-sans selection:bg-[#C8A26A]/30">
             <Navbar />
-            <main className="pt-20">
+            <main className="pt-16">
 
 
-                <div className="container mx-auto px-4 pt-16">
+                <div className="container mx-auto px-4 pt-8">
                     {/* Category Toggle Buttons */}
-                    <div className="flex justify-center gap-6 mb-16">
+                    <div className="flex justify-center gap-6 mb-8">
                         <Link
                             to="/portfolio/baby/packages"
                             className="px-10 py-5 bg-[#7D8C62] text-white rounded-full text-lg font-medium hover:bg-[#687652] transition-all duration-300 shadow-lg"
@@ -32,12 +32,12 @@ const BabyPackages = () => {
                             Baby Props
                         </Link>
                     </div>
-                    <header className="text-center mb-16">
+                    <header className="text-center mb-8">
                         <h1 className="text-4xl md:text-5xl font-light text-black tracking-widest mb-6 italic">
                             Baby Photography Packages
                         </h1>
-                        <div className="h-[2px] w-24 bg-[#D4A574] mx-auto mb-12" />
-                        <div className="flex items-center justify-center gap-6 mb-12">
+                        <div className="h-[2px] w-24 bg-[#D4A574] mx-auto mb-6" />
+                        <div className="flex items-center justify-center gap-6 mb-6">
                             <div className="h-px w-16 md:w-32 bg-neutral-200" />
                             <h2 className="text-lg md:text-2xl font-light text-[#D4A574] italic flex items-center gap-3">
                                 📷 <span className="tracking-wide">Capturing Milestones & Smiles</span> 📷
@@ -53,7 +53,7 @@ const BabyPackages = () => {
                         </div>
                     </header>
 
-                    <section className="max-w-5xl mx-auto mb-20 bg-neutral-50/50 rounded-[2.5rem] p-8 md:p-12 border border-neutral-100 shadow-sm">
+                    <section className="max-w-5xl mx-auto mb-10 bg-neutral-50/50 rounded-[2.5rem] p-8 md:p-12 border border-neutral-100 shadow-sm">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                             <div className="order-2 md:order-1">
                                 <h3 className="text-2xl md:text-3xl font-light text-[#D4A574] mb-8">
@@ -84,12 +84,12 @@ const BabyPackages = () => {
                     </section>
 
                     {/* Premium Section - Light Olive Luxury Redesign */}
-                    <section className="relative mt-32 rounded-[3rem] overflow-hidden bg-gradient-to-b from-[#EBEFE6] to-[#FBF6F2] text-[var(--foreground)] py-24 px-6 md:px-12 shadow-sm border-t border-white/50 mx-4 md:mx-0">
+                    <section className="relative mt-16 rounded-[3rem] overflow-hidden bg-gradient-to-b from-[#EBEFE6] to-[#FBF6F2] text-[var(--foreground)] py-12 px-6 md:px-12 shadow-sm border-t border-white/50 mx-4 md:mx-0">
                         {/* Soft Texture Overlay */}
                         <div className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-multiply" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }}></div>
 
                         {/* Header */}
-                        <div className="relative z-10 text-center mb-20">
+                        <div className="relative z-10 text-center mb-10">
                             <div className="flex items-center justify-center gap-3 mb-4 text-[#C8A26A]">
                                 <Sparkles className="w-5 h-5 animate-pulse text-[#C8A26A]/70" />
                                 <span className="text-sm md:text-base tracking-[0.4em] uppercase font-light text-black">Exquisite Collections</span>
@@ -174,7 +174,7 @@ const BabyPackages = () => {
                         </div>
 
                         {/* Terms & Conditions Section - Simplified/Refined */}
-                        <div className="mt-32 pt-16 border-t border-[#5B6342]/10 max-w-6xl mx-auto">
+                        <div className="mt-16 pt-8 border-t border-[#5B6342]/10 max-w-6xl mx-auto">
                             <div className="grid md:grid-cols-[1fr_2fr] gap-12">
                                 <div className="flex items-center gap-4">
                                     <div className="p-4 bg-white rounded-full border border-[#C8A26A]/20 shadow-sm">

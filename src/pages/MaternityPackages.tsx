@@ -6,8 +6,10 @@ import { Link } from "react-router-dom";
 import portfolioMaternity from "@/assets/portfolio-maternity.jpg";
 import heroNewborn from "@/assets/hero_newborn.png";
 import heroFamily from "@/assets/hero_family.png";
-import heroToddler from "@/assets/hero_toddler.png";
 import heroSitter from "@/assets/hero_sitter.png";
+import maternityPkg1 from "@/assets/maternity-package-1.jpg";
+import maternityPkg2 from "@/assets/maternity-package-2.jpg";
+import maternityPkg3 from "@/assets/maternity-package-3.jpg";
 
 const MaternityPackages = () => {
     return (
@@ -15,38 +17,23 @@ const MaternityPackages = () => {
             <Navbar />
 
             {/* Main Content Start after Navbar */}
-            <main className="pt-20">
+            <main className="pt-16">
 
 
 
 
 
-                <div className="container mx-auto px-4 pt-16">
-                    {/* Category Toggle Buttons */}
-                    <div className="flex justify-center gap-6 mb-16">
-                        <Link
-                            to="/portfolio/maternity/packages"
-                            className="px-10 py-5 bg-[#7D8C62] text-white rounded-full text-lg font-medium hover:bg-[#687652] transition-all duration-300 shadow-lg"
-                        >
-                            Maternity Packages
-                        </Link>
-                        <Link
-                            to="/portfolio/maternity/dresses"
-                            className="px-10 py-5 border-2 border-[#7D8C62] text-[#7D8C62] bg-transparent rounded-full text-lg font-medium hover:bg-[#7D8C62] hover:text-white transition-all duration-300 shadow-lg"
-                        >
-                            Maternity Dresses
-                        </Link>
-                    </div>
+                <div className="container mx-auto px-4 pt-8">
 
                     {/* Header Section */}
-                    <header className="text-center mb-16">
+                    <header className="text-center mb-8">
                         <h1 className="text-4xl md:text-5xl font-light text-black tracking-widest mb-6 italic">
                             Maternity Photography Packages
                         </h1>
-                        <div className="h-[2px] w-24 bg-[#D4A574] mx-auto mb-12" />
+                        <div className="h-[2px] w-24 bg-[#D4A574] mx-auto mb-6" />
 
                         {/* Elegant Icon Header */}
-                        <div className="flex items-center justify-center gap-6 mb-12">
+                        <div className="flex items-center justify-center gap-6 mb-6">
                             <div className="h-px w-16 md:w-32 bg-neutral-200" />
                             <h2 className="text-lg md:text-2xl font-light text-[#D4A574] italic flex items-center gap-3">
                                 📷 <span className="tracking-wide">Studio Shooting Elegant Photos</span> 📷
@@ -56,12 +43,17 @@ const MaternityPackages = () => {
 
                         {/* Top Gallery Grid */}
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto px-2">
-                            {[1, 2, 3, 4].map((i) => (
+                            {[
+                                { img: portfolioMaternity, alt: "Elegant Wings" },
+                                { img: maternityPkg1, alt: "Maternity Traditional" },
+                                { img: maternityPkg2, alt: "Maternity Red Dress" },
+                                { img: maternityPkg3, alt: "Maternity Artist Style" }
+                            ].map((item, i) => (
                                 <div key={i} className="aspect-[3/4] overflow-hidden rounded-xl shadow-lg group">
                                     <img
-                                        src={portfolioMaternity}
-                                        alt={`Studio ${i}`}
-                                        className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-105"
+                                        src={item.img}
+                                        alt={item.alt}
+                                        className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105"
                                     />
                                 </div>
                             ))}
@@ -69,7 +61,7 @@ const MaternityPackages = () => {
                     </header>
 
                     {/* Intro text */}
-                    <div className="max-w-3xl mx-auto text-center mb-24 px-4">
+                    <div className="max-w-3xl mx-auto text-center mb-12 px-4">
                         <p className="text-lg md:text-xl text-neutral-500 font-light italic leading-relaxed">
                             "Capturing the divine glow and the miraculous connection
                             of motherhood in every frame..."
@@ -77,7 +69,7 @@ const MaternityPackages = () => {
                     </div>
 
                     {/* Silver Package Listing (Light Theme) */}
-                    <section className="max-w-5xl mx-auto mb-20 bg-neutral-50/50 rounded-[2.5rem] p-8 md:p-12 border border-neutral-100 shadow-sm">
+                    <section className="max-w-5xl mx-auto mb-10 bg-neutral-50/50 rounded-[2.5rem] p-8 md:p-12 border border-neutral-100 shadow-sm">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                             <div className="order-2 md:order-1">
                                 <h3 className="text-2xl md:text-3xl font-light text-[#D4A574] mb-8">
@@ -109,12 +101,12 @@ const MaternityPackages = () => {
                     </section>
 
                     {/* Premium Section - Light Olive Luxury Redesign */}
-                    <section className="relative mt-32 rounded-[3rem] overflow-hidden bg-gradient-to-b from-[#EBEFE6] to-[#FBF6F2] text-[var(--foreground)] py-24 px-6 md:px-12 shadow-sm border-t border-white/50 mx-4 md:mx-0">
+                    <section className="relative mt-16 rounded-[3rem] overflow-hidden bg-gradient-to-b from-[#EBEFE6] to-[#FBF6F2] text-[var(--foreground)] py-12 px-6 md:px-12 shadow-sm border-t border-white/50 mx-4 md:mx-0">
                         {/* Soft Texture Overlay */}
                         <div className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-multiply" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }}></div>
 
                         {/* Header */}
-                        <div className="relative z-10 text-center mb-20">
+                        <div className="relative z-10 text-center mb-10">
                             <div className="flex items-center justify-center gap-3 mb-4 text-[#C8A26A]">
                                 <Sparkles className="w-5 h-5 animate-pulse text-[#C8A26A]/70" />
                                 <span className="text-sm md:text-base tracking-[0.4em] uppercase font-light text-black">Exquisite Collections</span>
@@ -135,7 +127,6 @@ const MaternityPackages = () => {
                                     features: [
                                         "3 Themes", "Outdoor / Indoor shoot", "25 Edited digital photos",
                                         "All raw unedited photos", "Total Time: 2 hours",
-                                        "Client Closet: 1 Dress", "Makeup & Hair Included",
                                         "Professional Retouching"
                                     ]
                                 },
@@ -146,7 +137,6 @@ const MaternityPackages = () => {
                                     features: [
                                         "4 Themes", "Studio + Outdoor shoot", "45 Edited digital photos",
                                         "All raw unedited photos", "Total Time: 4 hours",
-                                        "Client Closet: 2 Dress", "Hair & Makeup: 2 Looks",
                                         "Premium Album (12x18)", "Canvas Print Included"
                                     ]
                                 },
@@ -156,7 +146,6 @@ const MaternityPackages = () => {
                                     features: [
                                         "Unlimited Themes", "Any Location Access", "80 Edited digital photos",
                                         "Master Raw Gallery", "Full Day Coverage",
-                                        "Candid Video Highlights", "Exclusive Closet Access",
                                         "Luxury Coffee Table Book", "Wall Art Set (3 Frames)"
                                     ]
                                 }
@@ -199,7 +188,7 @@ const MaternityPackages = () => {
                         </div>
 
                         {/* Terms & Conditions Section - Simplified/Refined */}
-                        <div className="mt-32 pt-16 border-t border-[#5B6342]/10 max-w-6xl mx-auto">
+                        <div className="mt-16 pt-8 border-t border-[#5B6342]/10 max-w-6xl mx-auto">
                             <div className="grid md:grid-cols-[1fr_2fr] gap-12">
                                 <div className="flex items-center gap-4">
                                     <div className="p-4 bg-white rounded-full border border-[#C8A26A]/20 shadow-sm">
@@ -227,8 +216,8 @@ const MaternityPackages = () => {
                     </section>
 
                     {/* Bottom Circular Navigation Section (Most common packages) */}
-                    <section className="mt-40 mb-20 text-center">
-                        <div className="flex items-center justify-center gap-6 mb-16">
+                    <section className="mt-20 mb-10 text-center">
+                        <div className="flex items-center justify-center gap-6 mb-8">
                             <div className="h-px w-12 bg-neutral-200" />
                             <h2 className="text-xl md:text-3xl font-light text-neutral-800 tracking-[0.2em]">
                                 All Portfolio / Sub category Photo
@@ -236,23 +225,21 @@ const MaternityPackages = () => {
                             <div className="h-px w-12 bg-neutral-200" />
                         </div>
 
-                        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-x-8 gap-y-16 max-w-5xl mx-auto px-4">
+                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-16 max-w-5xl mx-auto px-4">
                             {[
                                 { name: "Maternity", img: portfolioMaternity, link: "/portfolio/maternity" },
                                 { name: "Newborn", img: heroNewborn, link: "/portfolio/newborn" },
                                 { name: "Infant", img: heroNewborn, link: "/portfolio/baby" },
                                 { name: "Sitter", img: heroSitter, link: "/portfolio/sitter" },
-                                { name: "Birthday", img: heroToddler, link: "/portfolio/birthday" },
-                                { name: "Toddler", img: heroToddler, link: "/portfolio/toddler" },
-                                { name: "Family", img: heroFamily, link: "/portfolio/family" },
-                                { name: "Lifestyle", img: heroFamily, link: "/portfolio/lifestyle" }
+                                { name: "Birthday", img: heroSitter, link: "/portfolio/birthday" },
+                                { name: "Family", img: heroFamily, link: "/portfolio/family" }
                             ].map((item, i) => (
                                 <Link key={i} to={item.link} className="group block">
                                     <div className="aspect-square rounded-full overflow-hidden mb-6 shadow-xl border-4 border-white ring-1 ring-neutral-100 transition-transform duration-500 group-hover:scale-105 active:scale-95">
-                                        <img src={item.img} alt={item.name} className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0" />
+                                        <img src={item.img} alt={item.name} className="w-full h-full object-cover transition-all duration-700" />
                                     </div>
-                                    <h4 className="text-[10px] md:text-xs tracking-[0.3em] text-neutral-400 group-hover:text-[#D4A574] transition-colors font-semibold">
-                                        {item.name} Shoot <br /> <span className="text-[8px] font-normal opacity-50 mt-1 inline-block">View</span>
+                                    <h4 className="text-[10px] md:text-xs tracking-[0.3em] text-black transition-colors font-semibold">
+                                        {item.name} Shoot <br /> <span className="text-[8px] font-normal text-black mt-1 inline-block">View</span>
                                     </h4>
                                 </Link>
                             ))}
@@ -260,7 +247,7 @@ const MaternityPackages = () => {
                     </section>
 
                     {/* Social/Status Footer */}
-                    <div className="flex flex-col md:flex-row justify-between items-center gap-8 mt-40 pb-16 border-t border-neutral-100 pt-16">
+                    <div className="flex flex-col md:flex-row justify-between items-center gap-8 mt-20 pb-8 border-t border-neutral-100 pt-8">
                         <div className="flex gap-10">
                             {["Instagram", "Facebook", "Pinterest", "YouTube"].map((social) => (
                                 <a key={social} href="#" className="text-[10px] tracking-[0.3em] text-neutral-400 hover:text-[#D4A574] transition-colors font-medium">

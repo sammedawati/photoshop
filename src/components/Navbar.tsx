@@ -25,8 +25,6 @@ const Navbar = () => {
     { name: "Baby", path: "/portfolio/baby" },
     { name: "Sitter", path: "/portfolio/sitter" },
     { name: "Pre-Birthday", path: "/portfolio/birthday" },
-    { name: "Toddler", path: "/portfolio/toddler" },
-    { name: "Life-Style", path: "/portfolio/lifestyle" },
     { name: "Family", path: "/portfolio/family" },
   ];
 

@@ -23,13 +23,10 @@ import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 import PortfolioSitter from "./pages/PortfolioSitter";
 import PortfolioBirthday from "./pages/PortfolioBirthday";
-import PortfolioToddler from "./pages/PortfolioToddler";
-import PortfolioLifestyle from "./pages/PortfolioLifestyle";
 import PreparationGuide from "./pages/PreparationGuide";
 
 // Maternity Sub-pages
 import MaternityPackages from "./pages/MaternityPackages";
-import MaternityDresses from "./pages/MaternityDresses";
 
 // Newborn Sub-pages
 import NewbornPackages from "./pages/NewbornPackages";
@@ -47,17 +44,11 @@ import SitterThemes from "./pages/SitterThemes";
 import BirthdayPackages from "./pages/BirthdayPackages";
 import BirthdayThemes from "./pages/BirthdayThemes";
 
-// Toddler Sub-pages
-import ToddlerPackages from "./pages/ToddlerPackages";
-import ToddlerThemes from "./pages/ToddlerThemes";
 
 // Family Sub-pages
 import FamilyPackages from "./pages/FamilyPackages";
 import FamilyGallery from "./pages/FamilyGallery";
 
-// Lifestyle Sub-pages
-import LifestylePackages from "./pages/LifestylePackages";
-import LifestyleGallery from "./pages/LifestyleGallery";
 
 const queryClient = new QueryClient();
 
@@ -75,7 +66,6 @@ const App = () => (
           {/* Maternity Routes */}
           <Route path="/portfolio/maternity" element={<PortfolioMaternity />} />
           <Route path="/portfolio/maternity/packages" element={<MaternityPackages />} />
-          <Route path="/portfolio/maternity/dresses" element={<MaternityDresses />} />
 
           {/* Newborn Routes */}
           <Route path="/portfolio/newborn" element={<PortfolioNewborn />} />
@@ -97,20 +87,12 @@ const App = () => (
           <Route path="/portfolio/birthday/packages" element={<BirthdayPackages />} />
           <Route path="/portfolio/birthday/themes" element={<BirthdayThemes />} />
 
-          {/* Toddler Routes */}
-          <Route path="/portfolio/toddler" element={<PortfolioToddler />} />
-          <Route path="/portfolio/toddler/packages" element={<ToddlerPackages />} />
-          <Route path="/portfolio/toddler/themes" element={<ToddlerThemes />} />
 
           {/* Family Routes */}
           <Route path="/portfolio/family" element={<PortfolioFamily />} />
           <Route path="/portfolio/family/packages" element={<FamilyPackages />} />
           <Route path="/portfolio/family/gallery" element={<FamilyGallery />} />
 
-          {/* Lifestyle Routes */}
-          <Route path="/portfolio/lifestyle" element={<PortfolioLifestyle />} />
-          <Route path="/portfolio/lifestyle/packages" element={<LifestylePackages />} />
-          <Route path="/portfolio/lifestyle/gallery" element={<LifestyleGallery />} />
 
           <Route path="/portfolio/kids" element={<PortfolioKids />} />
           <Route path="/portfolio/events" element={<PortfolioEvents />} />

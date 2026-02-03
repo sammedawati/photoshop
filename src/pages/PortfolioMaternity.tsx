@@ -45,33 +45,27 @@ const PortfolioMaternity = () => {
                             >
                                 Maternity Packages
                             </Link>
-                            <Link
-                                to="/portfolio/maternity/dresses"
-                                className="px-10 py-5 border-2 border-[#7D8C62] text-[#7D8C62] rounded-full text-lg font-medium hover:bg-[#7D8C62] hover:text-white hover:scale-105 transition-all duration-300 shadow-lg"
-                            >
-                                Maternity Dresses
-                            </Link>
                         </div>
                     </div>
+                </div>
 
-                    {/* Featured Gallery Preview */}
-                    <div className="mt-20">
-                        <h2 className="text-3xl font-light text-center mb-12 text-neutral-900">Featured Moments</h2>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {[1, 2, 3, 4, 5, 6].map((idx) => (
-                                <div
-                                    key={idx}
-                                    className="relative overflow-hidden rounded-3xl aspect-[4/5] group shadow-sm hover:shadow-xl transition-all duration-500"
-                                >
-                                    <img
-                                        src={portfolioMaternity}
-                                        alt={`Maternity featured ${idx}`}
-                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                    />
-                                    <div className="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/10 transition-colors duration-500" />
-                                </div>
-                            ))}
-                        </div>
+                {/* Featured Gallery Preview */}
+                <div className="mt-20">
+                    <h2 className="text-3xl font-light text-center mb-12 text-neutral-900">Featured Moments</h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {[1, 2, 3, 4, 5, 6].map((idx) => (
+                            <div
+                                key={idx}
+                                className="relative overflow-hidden rounded-3xl aspect-[4/5] group shadow-sm hover:shadow-xl transition-all duration-500"
+                            >
+                                <img
+                                    src={portfolioMaternity}
+                                    alt={`Maternity featured ${idx}`}
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                />
+                                <div className="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/10 transition-colors duration-500" />
+                            </div>
+                        ))}
                     </div>
                 </div>
             </main>

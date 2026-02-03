@@ -7,27 +7,27 @@ const AboutSection = () => {
   const photographers = [
     {
       id: "sachin",
-      name: "Sachin Subhash Bhor",
+      name: "Kiran Pawar",
       title: "Fine Artist, Family Portrait Photographer & Mentor",
       image: photographerMale,
     },
     {
       id: "priyadarshani",
-      name: "Priyadarshani Sachin Bhor",
+      name: "Shivani Pawar",
       title: "Fine Artist, Maternity, Newborn, Baby Photographer & Mentor",
       image: photographerFemale,
     },
   ];
 
   return (
-    <section className="bg-[var(--background)] m-0 pb-10 pt-2" style={{ minHeight: 'auto' }}>
+    <section className="bg-[var(--background)] m-0 pb-4 pt-1" style={{ minHeight: 'auto' }}>
       <div className="container mx-auto px-4">
         {/* Hero Text Content - Moved from Hero Section */}
-        <div className="text-center max-w-4xl mx-auto mb-6">
-          <h1 className="text-4xl md:text-5xl lg:text-5xl font-heading text-foreground font-bold leading-tight mb-6">
+        <div className="text-center max-w-4xl mx-auto mb-4">
+          <h1 className="text-4xl md:text-5xl lg:text-5xl font-heading text-foreground font-bold leading-tight mb-4">
             Frames of Love – A Journey Through Our Lens!
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-4">
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-2">
             The world is a place with endless possibilities for creativity and exploration. Let the call to create something new be a continuous source of inspiration.
           </p>
           <p className="text-base md:text-lg text-muted-foreground/80 italic">
@@ -36,9 +36,9 @@ const AboutSection = () => {
         </div>
 
         {/* About Us Section */}
-        <h2 className="text-2xl md:text-3xl font-heading text-secondary text-center mb-4 uppercase tracking-wider">ABOUT US</h2>
-        <p className="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-8">
-          Hello, We are Priyadarshani & Sachin. An award-winning photographer duo based in Pune.
+        <h2 className="text-2xl md:text-3xl font-heading text-secondary text-center mb-2 uppercase tracking-wider">ABOUT US</h2>
+        <p className="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-4">
+          Hello, We are Shivani & Kiran. An award-winning photographer duo based in Pune.
         </p>
 
         <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20 lg:gap-32">

@@ -311,7 +311,7 @@ export const blogPosts: BlogPost[] = [
       <p>The ideal time for maternity photos is between 28-34 weeks of pregnancy. Your bump will be beautifully round, but you'll still be comfortable enough to enjoy the session.</p>
       
       <h3>What to Wear</h3>
-      <p>Choose outfits that highlight your bump while making you feel beautiful. Flowing gowns, fitted dresses, or even your partner's shirt can create stunning images. We provide a selection of maternity gowns for our clients to choose from.</p>
+      <p>Choose outfits that highlight your bump while making you feel beautiful. Flowing gowns, fitted dresses, or even your partner's shirt can create stunning images.</p>
       
       <h3>Include Your Partner</h3>
       <p>Maternity sessions are wonderful opportunities to capture the anticipation and love between expectant parents. Partner shots add an emotional depth to your gallery.</p>

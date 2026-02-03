@@ -54,7 +54,7 @@ const SitterThemes = () => {
                                     ))}
                                 </div>
                                 <div className="text-center">
-                                    <h3 className="text-sm uppercase tracking-[0.4em] text-neutral-400 font-light group-hover:text-[#D4A574] transition-colors duration-500">
+                                    <h3 className="text-sm uppercase tracking-[0.4em] text-black font-light transition-colors duration-500">
                                         {pair.title}
                                     </h3>
                                 </div>

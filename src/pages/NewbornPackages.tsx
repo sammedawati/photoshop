@@ -14,12 +14,12 @@ const NewbornPackages = () => {
         <div className="min-h-screen bg-[var(--background)] font-sans selection:bg-[#C8A26A]/30">
             <Navbar />
 
-            <main className="pt-20">
+            <main className="pt-16">
 
 
-                <div className="container mx-auto px-4 pt-16">
+                <div className="container mx-auto px-4 pt-8">
                     {/* Category Toggle Buttons */}
-                    <div className="flex justify-center gap-6 mb-16">
+                    <div className="flex justify-center gap-6 mb-8">
                         <Link
                             to="/portfolio/newborn/packages"
                             className="px-10 py-5 bg-[#7D8C62] text-white rounded-full text-lg font-medium hover:bg-[#687652] transition-all duration-300 shadow-lg"
@@ -34,14 +34,14 @@ const NewbornPackages = () => {
                         </Link>
                     </div>
                     {/* Header Section */}
-                    <header className="text-center mb-16">
+                    <header className="text-center mb-8">
                         <h1 className="text-4xl md:text-5xl font-light text-black tracking-widest mb-6 italic">
                             Newborn Photography Packages
                         </h1>
-                        <div className="h-[2px] w-24 bg-[#D4A574] mx-auto mb-12" />
+                        <div className="h-[2px] w-24 bg-[#D4A574] mx-auto mb-6" />
 
                         {/* Elegant Icon Header */}
-                        <div className="flex items-center justify-center gap-6 mb-12">
+                        <div className="flex items-center justify-center gap-6 mb-6">
                             <div className="h-px w-16 md:w-32 bg-neutral-200" />
                             <h2 className="text-lg md:text-2xl font-light text-[#D4A574] italic flex items-center gap-3">
                                 📷 <span className="tracking-wide">Timeless Newborn Portraits</span> 📷
@@ -64,7 +64,7 @@ const NewbornPackages = () => {
                     </header>
 
                     {/* Intro text */}
-                    <div className="max-w-3xl mx-auto text-center mb-24 px-4">
+                    <div className="max-w-3xl mx-auto text-center mb-12 px-4">
                         <p className="text-lg md:text-xl text-neutral-500 font-light italic leading-relaxed">
                             "Capturing the pure, fleeting moments of your baby's first days
                             in the most artistic way possible..."
@@ -72,7 +72,7 @@ const NewbornPackages = () => {
                     </div>
 
                     {/* Silver Package Listing (Light Theme) */}
-                    <section className="max-w-5xl mx-auto mb-20 bg-neutral-50/50 rounded-[2.5rem] p-8 md:p-12 border border-neutral-100 shadow-sm">
+                    <section className="max-w-5xl mx-auto mb-10 bg-neutral-50/50 rounded-[2.5rem] p-8 md:p-12 border border-neutral-100 shadow-sm">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                             <div className="order-2 md:order-1">
                                 <h3 className="text-2xl md:text-3xl font-light text-[#D4A574] mb-8">
@@ -106,12 +106,12 @@ const NewbornPackages = () => {
                     {/* Premium Section Header (Dark Green) */}
                     {/* Premium Section - Luxury Redesign */}
                     {/* Premium Section - Light Olive Luxury Redesign */}
-                    <section className="relative mt-32 rounded-[3rem] overflow-hidden bg-gradient-to-b from-[#EBEFE6] to-[#FBF6F2] text-[var(--foreground)] py-24 px-6 md:px-12 shadow-sm border-t border-white/50 mx-4 md:mx-0">
+                    <section className="relative mt-16 rounded-[3rem] overflow-hidden bg-gradient-to-b from-[#EBEFE6] to-[#FBF6F2] text-[var(--foreground)] py-12 px-6 md:px-12 shadow-sm border-t border-white/50 mx-4 md:mx-0">
                         {/* Soft Texture Overlay */}
                         <div className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-multiply" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }}></div>
 
                         {/* Header */}
-                        <div className="relative z-10 text-center mb-20">
+                        <div className="relative z-10 text-center mb-10">
                             <div className="flex items-center justify-center gap-3 mb-4 text-[#C8A26A]">
                                 <Sparkles className="w-5 h-5 animate-pulse text-[#C8A26A]/70" />
                                 <span className="text-sm md:text-base tracking-[0.4em] uppercase font-light text-black">Exquisite Collections</span>
@@ -196,7 +196,7 @@ const NewbornPackages = () => {
                         </div>
 
                         {/* Terms & Conditions Section - Simplified/Refined */}
-                        <div className="mt-32 pt-16 border-t border-[#5B6342]/10 max-w-6xl mx-auto">
+                        <div className="mt-16 pt-8 border-t border-[#5B6342]/10 max-w-6xl mx-auto">
                             <div className="grid md:grid-cols-[1fr_2fr] gap-12">
                                 <div className="flex items-center gap-4">
                                     <div className="p-4 bg-white rounded-full border border-[#C8A26A]/20 shadow-sm">
@@ -224,7 +224,7 @@ const NewbornPackages = () => {
                     </section>
 
                     {/* Bottom Circular Navigation Section */}
-                    <section className="mt-40 mb-20 text-center">
+                    <section className="mt-20 mb-10 text-center">
                         <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-x-8 gap-y-16 max-w-5xl mx-auto px-4">
                             {[
                                 { name: "Maternity", img: heroMaternity, link: "/portfolio/maternity" },
@@ -240,8 +240,8 @@ const NewbornPackages = () => {
                                     <div className="aspect-square rounded-full overflow-hidden mb-6 shadow-xl border-4 border-white ring-1 ring-neutral-100 transition-transform duration-500 group-hover:scale-105 active:scale-95">
                                         <img src={item.img} alt={item.name} className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0" />
                                     </div>
-                                    <h4 className="text-[10px] md:text-xs tracking-[0.3em] text-neutral-400 group-hover:text-[#D4A574] transition-colors font-semibold">
-                                        {item.name} Shoot
+                                    <h4 className="text-[10px] md:text-xs tracking-[0.3em] text-black transition-colors font-semibold">
+                                        {item.name} Shoot <br /> <span className="text-[8px] font-normal text-black mt-1 inline-block">View</span>
                                     </h4>
                                 </Link>
                             ))}

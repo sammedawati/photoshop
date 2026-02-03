@@ -7,8 +7,6 @@ import portfolioNewborn from "@/assets/portfolio-newborn.jpg";
 import portfolioBaby from "@/assets/portfolio-baby.jpg";
 import portfolioSitter from "@/assets/portfolio-sitter.jpg";
 import portfolioBirthday from "@/assets/portfolio-birthday.jpg";
-import portfolioToddler from "@/assets/portfolio-toddler.jpg";
-import portfolioLifestyle from "@/assets/portfolio-lifestyle.jpg";
 import portfolioFamily from "@/assets/portfolio-family.jpg";
 
 const portfolioCategories = [
@@ -17,8 +15,6 @@ const portfolioCategories = [
   { title: "BABY - INFANT", image: portfolioBaby, link: "/portfolio/baby" },
   { title: "SITTER", image: portfolioSitter, link: "/portfolio/sitter" },
   { title: "PRE BIRTHDAY - CAKE SMASH", image: portfolioBirthday, link: "/portfolio/birthday" },
-  { title: "TODDLER - CHILDREN", image: portfolioToddler, link: "/portfolio/toddler" },
-  { title: "LIFESTYLE SESSION", image: portfolioLifestyle, link: "/portfolio/lifestyle" },
   { title: "FAMILY PORTRAIT", image: portfolioFamily, link: "/portfolio/family" },
 ];
 
@@ -33,7 +29,7 @@ const Portfolio = () => {
           variant="minimal"
         />
         <div className="container mx-auto px-4 py-16">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
             {portfolioCategories.map((category, index) => (
               <Link
                 key={category.title}

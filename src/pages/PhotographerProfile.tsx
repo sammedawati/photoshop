@@ -10,22 +10,22 @@ import { Instagram, Facebook, Mail } from "lucide-react";
 
 const photographers = {
     sachin: {
-        name: "Sachin Subhash Bhor",
+        name: "Kiran Pawar",
         image: photographerMale,
-        role: "Fine Artist, Maternity, Baby, Child Photographer & Mentor",
+        role: "Fine Artist, Family Portrait Photographer & Mentor",
         bio: [
-            "Sachin started Photography with his dad in 1996. As a photographer, he has experience of 23+ years especially in the field of wedding photography.",
+            "Kiran started Photography with his dad in 1996. As a photographer, he has experience of 23+ years especially in the field of wedding photography.",
             "Post his formal education in fine arts he started working as an Assistant Art Director in the film industry – Mumbai. After For almost 5 years of working as Art Director, he started a brand for wedding photography in 2011.",
             "His technical expertise in lighting and composition combined with his artistic background allows him to create stunning, fine-art quality portraits that capture the essence of every subject.",
         ],
         specialties: ["Maternity", "Baby", "Children", "Fine Art Portraits"]
     },
     priyadarshani: {
-        name: "Priyadarshani Sachin Bhor",
+        name: "Shivani Pawar",
         image: photographerFemale,
-        role: "Fine Artist, Maternity, Newborn, Baby Photographer & Mom of teenage",
+        role: "Fine Artist, Maternity, Newborn, Baby Photographer & Mentor",
         bio: [
-            "In 2016 Priyadarshani got fascinated with creative New-born & Maternity Photography.",
+            "In 2016 Shivani got fascinated with creative New-born & Maternity Photography.",
             "She started taking education on the creative, aesthetic, lights, props, and photographic aspects of new-born baby photo-shoot and during that period she completed various in-person & online workshops from leading mentors from all over the world.",
             "After studying more than 1.5 years, she started her journey as a Newborn & Maternity photographer in Nov 2018. Her gentle approach with newborns and creative vision for maternity sessions has made her a favorite among parents.",
         ],
@@ -113,7 +113,7 @@ const PhotographerProfile = () => {
                                     to="/contact"
                                     className="inline-block px-8 py-3 bg-secondary text-white rounded-lg hover:bg-secondary/90 transition-all font-heading"
                                 >
-                                    Book a Session with {id === 'sachin' ? 'Sachin' : 'Priyadarshani'}
+                                    Book a Session with {id === 'sachin' ? 'Kiran' : 'Shivani'}
                                 </Link>
                             </div>
                         </div>

@@ -4,8 +4,6 @@ import portfolioNewborn from "@/assets/portfolio-newborn.jpg";
 import portfolioBaby from "@/assets/portfolio-baby.jpg";
 import portfolioSitter from "@/assets/portfolio-sitter.jpg";
 import portfolioBirthday from "@/assets/portfolio-birthday.jpg";
-import portfolioToddler from "@/assets/portfolio-toddler.jpg";
-import portfolioLifestyle from "@/assets/portfolio-lifestyle.jpg";
 import portfolioFamily from "@/assets/portfolio-family.jpg";
 
 const portfolioItems = [
@@ -40,18 +38,6 @@ const portfolioItems = [
     link: "/portfolio/birthday",
   },
   {
-    title: "Toddler-Children Portfolio",
-    subtitle: "18 months & Above",
-    image: portfolioToddler,
-    link: "/portfolio/toddler",
-  },
-  {
-    title: "Lifestyle Portfolio",
-    subtitle: "For All",
-    image: portfolioLifestyle,
-    link: "/portfolio/lifestyle",
-  },
-  {
     title: "Family Portfolio",
     subtitle: "For All",
     image: portfolioFamily,
@@ -61,13 +47,13 @@ const portfolioItems = [
 
 const PortfolioSection = () => {
   return (
-    <section className="pt-10 pb-16 bg-gradient-to-b from-[#EBEFE6] to-[#FBF6F2]">
+    <section className="pt-6 pb-10 bg-gradient-to-b from-[#EBEFE6] to-[#FBF6F2]">
       <div className="container mx-auto px-4">
-        <h2 className="text-2xl md:text-3xl font-heading text-[#5B6342] text-center mb-6">
+        <h2 className="text-2xl md:text-3xl font-heading text-[#5B6342] text-center mb-4">
           CLICK on the image to view portfolio
         </h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 max-w-6xl mx-auto">
           {portfolioItems.map((item, index) => (
             <Link
               key={item.title}

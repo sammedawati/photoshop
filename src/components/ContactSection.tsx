@@ -269,10 +269,10 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="py-12 md:py-24 bg-background">
+    <section className="py-8 md:py-12 bg-background">
       <div className="container mx-auto px-4 max-w-2xl">
         <div className="bg-card rounded-2xl shadow-2xl p-6 md:p-12 border border-border/50">
-          <h2 className="text-3xl md:text-4xl font-heading text-secondary text-center mb-10">
+          <h2 className="text-3xl md:text-4xl font-heading text-secondary text-center mb-6">
             Get in Touch
           </h2>
 

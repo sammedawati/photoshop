@@ -75,8 +75,7 @@ const PreparationGuide = () => {
                                 <li>Specially New moms- Take a good sleep at night to avoid unhappy baby during shoot. In per my experience if mom is not calm & cool during the session then baby can feel those vibes which turned baby into unsettled baby. So you may take help of your mom's or husband's help at the prior night of the shoot street.</li>
                                 <li>Mum's can wear long or short sleeves dresses / around / Pastel Shades (Beige, cream, grey), pale colors with minimum design or plain dress. Avoid large pattern or bright colours.</li>
                                 <li>Yes, definitely, you can wear your accessories which can complement your attire, we suggest to wear those costumes & accessories in which you feel comfortable. If you are not comfortable it reflects in your photos so "WEAR WHAT YOU LOVE".</li>
-                                <li>Our Gown collection can be used for both Maternity session as well as regular family sessions because the gowns which we have are made of fully stretchable fabric.</li>
-                                <li>If you are willing to use Gown from our collection, confirm it 4 days prior to the session, so we can get it properly clean & ironed. And If you are willing to use costumes apart from our collection on rent, you need to pay charges.</li>
+                                <li>If you are willing to use costumes, confirm it 4 days prior to the session. And If you are willing to use costumes on rent, you need to pay charges.</li>
                                 <li>Take a good hair-wash on the day of shoot and avoid use of oil or any cream on the hair. Just dry your hair properly.</li>
                                 <li>If you opted for make-up service, then it takes 1 hour for make-up & hair so you need to come an hour prior the actual shoot time. If you come late then simultaneously it will affect the schedule of the day, definitely we keep buffering time but for that we will missed appearances of children per turn slot given to you... so there may be chances of compromising the session time.</li>
                             </ul>
@@ -100,7 +99,7 @@ const PreparationGuide = () => {
                             <div className="space-y-8 max-w-2xl mx-auto">
                                 <div>
                                     <h3 className="font-heading text-lg mb-2">Do you provide costumes?</h3>
-                                    <p className="text-muted-foreground">Yes we do. For Maternity: Yes we have a beautiful collection of Maternity costumes / gowns which can be used at no extra cost. For Newborn: We provide everything for the newborns. For Babies up to 1 year: We have few options available for props and costumes.</p>
+                                    <p className="text-muted-foreground">For Newborn: We provide everything for the newborns. For Babies up to 1 year: We have few options available for props and costumes.</p>
                                 </div>
 
                                 <div>
