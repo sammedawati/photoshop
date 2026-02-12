@@ -9,7 +9,7 @@ import portfolioFamily from "@/assets/portfolio-family.jpg";
 import { Instagram, Facebook, Mail } from "lucide-react";
 
 const photographers = {
-    sachin: {
+    kiran: {
         name: "Kiran Pawar",
         image: photographerMale,
         role: "Fine Artist, Family Portrait Photographer & Mentor",
@@ -20,7 +20,7 @@ const photographers = {
         ],
         specialties: ["Maternity", "Baby", "Children", "Fine Art Portraits"]
     },
-    priyadarshani: {
+    shivani: {
         name: "Shivani Pawar",
         image: photographerFemale,
         role: "Fine Artist, Maternity, Newborn, Baby Photographer & Mentor",
@@ -113,7 +113,7 @@ const PhotographerProfile = () => {
                                     to="/contact"
                                     className="inline-block px-8 py-3 bg-secondary text-white rounded-lg hover:bg-secondary/90 transition-all font-heading"
                                 >
-                                    Book a Session with {id === 'sachin' ? 'Kiran' : 'Shivani'}
+                                    Book a Session with {id === 'kiran' ? 'Kiran' : 'Shivani'}
                                 </Link>
                             </div>
                         </div>

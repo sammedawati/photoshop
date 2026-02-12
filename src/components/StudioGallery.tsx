@@ -3,17 +3,26 @@ import portfolioMaternity from "@/assets/portfolio-maternity.jpg";
 import portfolioNewborn from "@/assets/portfolio-newborn.jpg";
 import portfolioBaby from "@/assets/portfolio-baby.jpg";
 import portfolioFamily from "@/assets/portfolio-family.jpg";
+import portfolioSitter from "@/assets/portfolio-sitter.jpg";
+import portfolioBirthday from "@/assets/portfolio-birthday.jpg";
+import shopInterior1 from "@/assets/shop-interior-1.jpg";
+import shopInterior2 from "@/assets/shop-interior-2.jpg";
+import shopInterior3 from "@/assets/shop-interior-3.jpg";
 
 const studioImages = [
     portfolioMaternity,
     portfolioNewborn,
     portfolioBaby,
-    portfolioFamily,
+    shopInterior1,
+    portfolioSitter,
+    portfolioBirthday,
+    shopInterior2,
+    shopInterior3,
 ];
 
 const StudioGallery = () => {
     return (
-        <section className="container mx-auto px-4 py-12 md:py-24">
+        <section className="container mx-auto px-4 pt-4 pb-12 md:pt-6 md:pb-24">
             <h2 className="text-3xl md:text-4xl font-heading text-secondary text-center mb-12">
                 Our Studio Gallery
             </h2>

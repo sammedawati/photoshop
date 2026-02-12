@@ -6,13 +6,13 @@ const AboutSection = () => {
 
   const photographers = [
     {
-      id: "sachin",
+      id: "kiran",
       name: "Kiran Pawar",
       title: "Fine Artist, Family Portrait Photographer & Mentor",
       image: photographerMale,
     },
     {
-      id: "priyadarshani",
+      id: "shivani",
       name: "Shivani Pawar",
       title: "Fine Artist, Maternity, Newborn, Baby Photographer & Mentor",
       image: photographerFemale,
@@ -38,7 +38,7 @@ const AboutSection = () => {
         {/* About Us Section */}
         <h2 className="text-2xl md:text-3xl font-heading text-secondary text-center mb-2 uppercase tracking-wider">ABOUT US</h2>
         <p className="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-4">
-          Hello, We are Shivani & Kiran. An award-winning photographer duo based in Pune.
+          Hello, We are Shivani & Kiran. An award-winning photographer duo based in Tasgaon, Sangli.
         </p>
 
         <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20 lg:gap-32">

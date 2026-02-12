@@ -10,7 +10,7 @@ const PortfolioToddler = () => {
             <Navbar />
             <main className="pt-24 pb-16">
                 {/* Hero-like Landing Section */}
-                <div className="relative h-[60vh] md:h-[70vh] mb-16 overflow-hidden">
+                <div className="relative h-[60vh] md:h-[70vh] mb-8 overflow-hidden">
                     <img
                         src={heroToddler}
                         alt="Toddler Photography"
@@ -29,7 +29,7 @@ const PortfolioToddler = () => {
                 </div>
 
                 <div className="container mx-auto px-4">
-                    <div className="max-w-3xl mx-auto text-center mb-16 text-neutral-600 leading-relaxed">
+                    <div className="max-w-3xl mx-auto text-center mb-6 text-neutral-600 leading-relaxed">
                         <p className="text-lg mb-6">
                             Toddlers are a whirlwind of energy and pure emotion.
                             Our toddler sessions are designed to be fun and flexible,
@@ -39,30 +39,25 @@ const PortfolioToddler = () => {
                         </p>
 
                         {/* Action Buttons */}
-                        <div className="flex flex-col sm:flex-row gap-6 justify-center mt-12">
+                        <div className="flex flex-col sm:flex-row gap-6 justify-center mt-6">
                             <Link
                                 to="/portfolio/toddler/packages"
                                 className="px-10 py-5 bg-white border-2 border-[#7D8C62] text-[#7D8C62] rounded-full text-lg font-medium hover:bg-[#7D8C62] hover:text-white hover:scale-105 transition-all duration-300 shadow-lg"
                             >
                                 Toddler Packages
                             </Link>
-                            <Link
-                                to="/portfolio/toddler/themes"
-                                className="px-10 py-5 border-2 border-[#7D8C62] text-[#7D8C62] rounded-full text-lg font-medium hover:bg-[#7D8C62] hover:text-white hover:scale-105 transition-all duration-300 shadow-lg"
-                            >
-                                Themes & Props
-                            </Link>
+                            {/* Themes & Props button removed */}
                         </div>
                     </div>
 
                     {/* Featured Gallery Preview */}
-                    <div className="mt-20">
+                    <div className="mt-6">
                         <h2 className="text-3xl font-light text-center mb-12 text-neutral-900">Featured Moments</h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                             {[1, 2, 3, 4, 5, 6].map((idx) => (
                                 <div
                                     key={idx}
-                                    className="relative overflow-hidden rounded-3xl aspect-[4/5] group shadow-sm hover:shadow-xl transition-all duration-500"
+                                    className="relative overflow-hidden rounded-3xl aspect-[3/4] group shadow-sm hover:shadow-xl transition-all duration-500"
                                 >
                                     <img
                                         src={portfolioToddler}

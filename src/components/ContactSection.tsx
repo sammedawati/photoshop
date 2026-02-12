@@ -5,437 +5,406 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 
 interface FormData {
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone: string;
-  photographyType: string;
-  message: string;
-}
-
-interface FormErrors {
-  firstName?: string;
-  lastName?: string;
-  email?: string;
-  phone?: string;
-  photographyType?: string;
-  message?: string;
-}
-
-interface TouchedFields {
-  firstName: boolean;
-  lastName: boolean;
-  email: boolean;
-  phone: boolean;
-  photographyType: boolean;
-  message: boolean;
+  customerName: string;
+  mobileNo: string;
+  whatsappNo: string;
+  instagramId: string;
+  emailId: string;
+  babyName: string;
+  babyDob: string;
+  shootDate: string;
+  shootTime: string;
+  shootType: string;
+  packageName: string;
+  billNumber: string;
+  deliveryDate: string;
+  socialMediaPermission: string;
+  totalBill: string;
+  advance: string;
+  balance: string;
+  balanceDate: string;
+  takenBy: string;
+  photographedBy: string;
 }
 
 const ContactSection = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState<FormData>({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    photographyType: "",
-    message: "",
+    customerName: "",
+    mobileNo: "",
+    whatsappNo: "",
+    instagramId: "",
+    emailId: "",
+    babyName: "",
+    babyDob: "",
+    shootDate: "",
+    shootTime: "",
+    shootType: "",
+    packageName: "",
+    billNumber: "",
+    deliveryDate: "",
+    socialMediaPermission: "",
+    totalBill: "",
+    advance: "",
+    balance: "",
+    balanceDate: "",
+    takenBy: "",
+    photographedBy: "",
   });
 
   const [errors, setErrors] = useState<FormErrors>({});
-  const [touched, setTouched] = useState<TouchedFields>({
-    firstName: false,
-    lastName: false,
-    email: false,
-    phone: false,
-    photographyType: false,
-    message: false,
-  });
+  const [touched, setTouched] = useState<TouchedFields>({});
 
-  // Validation functions
-  const validateName = (name: string, fieldName: string): string | undefined => {
-    if (!name.trim()) {
-      return `${fieldName} is required`;
-    }
-    if (name.trim().length < 2) {
-      return `${fieldName} must be at least 2 characters`;
-    }
-    if (!/^[a-zA-Z\s-]+$/.test(name)) {
-      return `${fieldName} can only contain letters, spaces, and hyphens`;
-    }
-    return undefined;
-  };
-
-  const validateEmail = (email: string): string | undefined => {
-    if (!email.trim()) {
-      return "Email is required";
-    }
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      return "Please enter a valid email address";
-    }
-    return undefined;
-  };
-
-  const validatePhone = (phone: string): string | undefined => {
-    if (!phone.trim()) {
-      return "Phone number is required";
-    }
-    // Remove any non-digit characters for validation
-    const cleanPhone = phone.replace(/\D/g, '');
-    if (!/^\d+$/.test(cleanPhone)) {
-      return "Phone number can only contain digits";
-    }
-    if (cleanPhone.length !== 10) {
-      return "Phone number must be exactly 10 digits";
-    }
-    return undefined;
-  };
-
-  const validatePhotographyType = (type: string): string | undefined => {
-    if (!type.trim()) {
-      return "Photography type is required";
-    }
-    return undefined;
-  };
-
-  const validateMessage = (message: string): string | undefined => {
-    if (message.length > 500) {
-      return "Message must not exceed 500 characters";
-    }
-    return undefined;
-  };
-
-  // Validate a single field
-  const validateField = (name: keyof FormData, value: string): string | undefined => {
+  const validateField = (name: keyof FormData, value: string): string => {
     switch (name) {
-      case "firstName":
-        return validateName(value, "First name");
-      case "lastName":
-        return validateName(value, "Last name");
-      case "email":
-        return validateEmail(value);
-      case "phone":
-        return validatePhone(value);
-      case "photographyType":
-        return validatePhotographyType(value);
-      case "message":
-        return validateMessage(value);
+      case "customerName":
+        if (!value.trim()) return "Customer name is required / ग्राहकाचे नाव आवश्यक आहे";
+        return "";
+      case "mobileNo":
+        if (!value.trim()) return "Mobile number is required / मोबाईल नंबर आवश्यक आहे";
+        if (!/^\d{10}$/.test(value.replace(/\D/g, ""))) return "Must be 10 digits / १० अंक असणे आवश्यक आहे";
+        return "";
+      case "whatsappNo":
+        if (value && !/^\d{10}$/.test(value.replace(/\D/g, ""))) return "Must be 10 digits / १० अंक असणे आवश्यक आहे";
+        return "";
+      case "emailId":
+        if (value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) return "Invalid email format / ईमेल फॉरमॅट चुकीचा आहे";
+        return "";
+      case "shootDate":
+        if (!value) return "Shoot date is required / शूटची तारीख आवश्यक आहे";
+        return "";
+      case "shootType":
+        if (!value) return "Shoot type is required / शूटचा प्रकार आवश्यक आहे";
+        return "";
       default:
-        return undefined;
+        return "";
     }
   };
 
-  // Check if form is valid
   const isFormValid = useMemo(() => {
-    const requiredFields: (keyof FormData)[] = ["firstName", "lastName", "email", "phone", "photographyType"];
-
-    // Check if all required fields have values
-    const allRequiredFieldsFilled = requiredFields.every(field => formData[field].trim() !== "");
-
-    // Check if there are no errors
-    const noErrors = Object.keys(errors).length === 0;
-
-    return allRequiredFieldsFilled && noErrors;
+    const requiredFields: (keyof FormData)[] = ["customerName", "mobileNo", "shootDate", "shootType"];
+    const hasRequired = requiredFields.every(field => !!formData[field]);
+    const hasNoErrors = Object.values(errors).every(error => !error);
+    return hasRequired && hasNoErrors;
   }, [formData, errors]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Mark all fields as touched
-    const allTouched: TouchedFields = {
-      firstName: true,
-      lastName: true,
-      email: true,
-      phone: true,
-      photographyType: true,
-      message: true,
-    };
+    // Mark all as touched to show any missed errors
+    const allTouched: TouchedFields = {};
+    (Object.keys(formData) as (keyof FormData)[]).forEach(key => {
+      allTouched[key] = true;
+    });
     setTouched(allTouched);
 
-    // Validate all fields
-    const newErrors: FormErrors = {};
-    (Object.keys(formData) as (keyof FormData)[]).forEach(field => {
-      const error = validateField(field, formData[field]);
-      if (error) {
-        newErrors[field] = error;
-      }
-    });
-
-    setErrors(newErrors);
-
-    // If there are errors, don't submit
-    if (Object.keys(newErrors).length > 0) {
+    if (!isFormValid) {
       toast({
         title: "Validation Error",
-        description: "Please fix the errors before submitting.",
+        description: "Please check the required fields / कृपया आवश्यक फील्ड तपासा",
         variant: "destructive",
       });
       return;
     }
 
-    // Success
     toast({
-      title: "Message Sent!",
-      description: "We'll get back to you as soon as possible.",
+      title: "Form Submitted!",
+      description: "Thank you for providing the details. We'll be in touch soon.",
     });
 
-    // Reset form
     setFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-      photographyType: "",
-      message: "",
+      customerName: "",
+      mobileNo: "",
+      whatsappNo: "",
+      instagramId: "",
+      emailId: "",
+      babyName: "",
+      babyDob: "",
+      shootDate: "",
+      shootTime: "",
+      shootType: "",
+      packageName: "",
+      billNumber: "",
+      deliveryDate: "",
+      socialMediaPermission: "",
+      totalBill: "",
+      advance: "",
+      balance: "",
+      balanceDate: "",
+      takenBy: "",
+      photographedBy: "",
     });
     setErrors({});
-    setTouched({
-      firstName: false,
-      lastName: false,
-      email: false,
-      phone: false,
-      photographyType: false,
-      message: false,
-    });
+    setTouched({});
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
 
-    // Special handling for phone - only allow digits
-    if (name === "phone") {
-      const cleanedValue = value.replace(/\D/g, '');
-      setFormData((prev) => ({
-        ...prev,
-        [name]: cleanedValue,
-      }));
+    // Numeric handling for specific fields
+    let processedValue = value;
+    if (["mobileNo", "whatsappNo", "totalBill", "advance", "balance", "billNumber"].includes(name)) {
+      processedValue = value.replace(/\D/g, "");
+    }
 
-      // Validate on change if field has been touched
-      if (touched[name as keyof TouchedFields]) {
-        const error = validateField(name as keyof FormData, cleanedValue);
-        setErrors(prev => {
-          const newErrors = { ...prev };
-          if (error) {
-            newErrors[name as keyof FormErrors] = error;
-          } else {
-            delete newErrors[name as keyof FormErrors];
-          }
-          return newErrors;
-        });
-      }
-    } else {
-      setFormData((prev) => ({
-        ...prev,
-        [name]: value,
-      }));
+    setFormData((prev) => ({
+      ...prev,
+      [name]: processedValue,
+    }));
 
-      // Validate on change if field has been touched
-      if (touched[name as keyof TouchedFields]) {
-        const error = validateField(name as keyof FormData, value);
-        setErrors(prev => {
-          const newErrors = { ...prev };
-          if (error) {
-            newErrors[name as keyof FormErrors] = error;
-          } else {
-            delete newErrors[name as keyof FormErrors];
-          }
-          return newErrors;
-        });
-      }
+    // Real-time validation if touched
+    if (touched[name as keyof FormData]) {
+      const error = validateField(name as keyof FormData, processedValue);
+      setErrors(prev => ({ ...prev, [name]: error }));
     }
   };
 
-  const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-
-    // Mark field as touched
-    setTouched(prev => ({
-      ...prev,
-      [name]: true,
-    }));
-
-    // Validate the field
+    setTouched(prev => ({ ...prev, [name]: true }));
     const error = validateField(name as keyof FormData, value);
-    setErrors(prev => {
-      const newErrors = { ...prev };
-      if (error) {
-        newErrors[name as keyof FormErrors] = error;
-      } else {
-        delete newErrors[name as keyof FormErrors];
-      }
-      return newErrors;
-    });
+    setErrors(prev => ({ ...prev, [name]: error }));
+  };
+
+  const getInputClass = (name: keyof FormData) => {
+    const base = "flex h-10 w-full rounded-md border bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 transition-all";
+    const errorClass = touched[name] && errors[name] ? "border-red-500 ring-red-500" : "border-input";
+    return `${base} ${errorClass}`;
   };
 
   return (
-    <section className="py-8 md:py-12 bg-background">
-      <div className="container mx-auto px-4 max-w-2xl">
-        <div className="bg-card rounded-2xl shadow-2xl p-6 md:p-12 border border-border/50">
-          <h2 className="text-3xl md:text-4xl font-heading text-secondary text-center mb-6">
-            Get in Touch
-          </h2>
+    <section className="pt-0 pb-12 bg-background">
+      <div className="container mx-auto px-4 max-w-5xl">
+        <div className="bg-card rounded-2xl shadow-2xl p-6 md:p-10 border border-border/50">
+          <div className="text-center mb-10 border-b border-border pb-6">
+            <h2 className="text-3xl md:text-4xl font-heading text-secondary mb-2">
+              माहिती फॉर्म / Information Form
+            </h2>
+            <p className="text-muted-foreground italic">
+              Please fill in your details below for our records
+            </p>
+          </div>
 
-          <form onSubmit={handleSubmit} className="space-y-4" noValidate>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label htmlFor="firstName" className="block text-sm font-medium mb-1">
-                  First Name <span className="text-destructive">*</span>
+          <form onSubmit={handleSubmit} className="space-y-8">
+            {/* Section 1: Customer Details */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="space-y-1">
+                <label className="text-sm font-medium flex flex-col">
+                  <span>Customer Name <span className="text-red-500">*</span></span>
+                  <span className="text-xs text-secondary/70">ग्राहकाचे नाव</span>
                 </label>
-                <Input
-                  id="firstName"
-                  name="firstName"
-                  value={formData.firstName}
+                <input name="customerName" value={formData.customerName} onChange={handleChange} onBlur={handleBlur} placeholder="Enter name" className={getInputClass("customerName")} />
+                {touched.customerName && errors.customerName && <p className="text-[10px] text-red-500">{errors.customerName}</p>}
+              </div>
+              <div className="space-y-1">
+                <label className="text-sm font-medium flex flex-col">
+                  <span>Mobile No <span className="text-red-500">*</span></span>
+                  <span className="text-xs text-secondary/70">मोबाईल नं</span>
+                </label>
+                <input name="mobileNo" value={formData.mobileNo} onChange={handleChange} onBlur={handleBlur} placeholder="10 digits" maxLength={10} className={getInputClass("mobileNo")} />
+                {touched.mobileNo && errors.mobileNo && <p className="text-[10px] text-red-500">{errors.mobileNo}</p>}
+              </div>
+              <div className="space-y-1">
+                <label className="text-sm font-medium flex flex-col">
+                  <span>WhatsApp Number</span>
+                  <span className="text-xs text-secondary/70">Whats App नंबर</span>
+                </label>
+                <input name="whatsappNo" value={formData.whatsappNo} onChange={handleChange} onBlur={handleBlur} placeholder="10 digits" maxLength={10} className={getInputClass("whatsappNo")} />
+                {touched.whatsappNo && errors.whatsappNo && <p className="text-[10px] text-red-500">{errors.whatsappNo}</p>}
+              </div>
+              <div className="space-y-1">
+                <label className="text-sm font-medium flex flex-col">
+                  <span>Instagram ID</span>
+                  <span className="text-xs text-secondary/70">Instagram Id</span>
+                </label>
+                <input name="instagramId" value={formData.instagramId} onChange={handleChange} onBlur={handleBlur} placeholder="@username" className={getInputClass("instagramId")} />
+              </div>
+              <div className="space-y-1">
+                <label className="text-sm font-medium flex flex-col">
+                  <span>Email ID</span>
+                  <span className="text-xs text-secondary/70">ईमेल आयडी</span>
+                </label>
+                <input name="emailId" type="email" value={formData.emailId} onChange={handleChange} onBlur={handleBlur} placeholder="Enter email" className={getInputClass("emailId")} />
+                {touched.emailId && errors.emailId && <p className="text-[10px] text-red-500">{errors.emailId}</p>}
+              </div>
+            </div>
+
+            <div className="h-px bg-border/50" />
+
+            {/* Section 2: Baby Details */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-1">
+                <label className="text-sm font-medium flex flex-col">
+                  <span>Baby Name</span>
+                  <span className="text-xs text-secondary/70">बाळाचे नाव</span>
+                </label>
+                <input name="babyName" value={formData.babyName} onChange={handleChange} onBlur={handleBlur} placeholder="Enter baby name" className={getInputClass("babyName")} />
+              </div>
+              <div className="space-y-1">
+                <label className="text-sm font-medium flex flex-col">
+                  <span>Baby Date of Birth</span>
+                  <span className="text-xs text-secondary/70">बाळाची जन्मतारीख</span>
+                </label>
+                <input name="babyDob" type="date" value={formData.babyDob} onChange={handleChange} onBlur={handleBlur} className={getInputClass("babyDob")} />
+              </div>
+            </div>
+
+            <div className="h-px bg-border/50" />
+
+            {/* Section 3: Shoot Details */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="space-y-1">
+                <label className="text-sm font-medium flex flex-col">
+                  <span>Shoot Date <span className="text-red-500">*</span></span>
+                  <span className="text-xs text-secondary/70">फोटो काढण्याची तारीख</span>
+                </label>
+                <input name="shootDate" type="date" value={formData.shootDate} onChange={handleChange} onBlur={handleBlur} className={getInputClass("shootDate")} />
+                {touched.shootDate && errors.shootDate && <p className="text-[10px] text-red-500">{errors.shootDate}</p>}
+              </div>
+              <div className="space-y-1">
+                <label className="text-sm font-medium flex flex-col">
+                  <span>Shoot Time</span>
+                  <span className="text-xs text-secondary/70">फोटो काढण्याची वेळ</span>
+                </label>
+                <input name="shootTime" type="time" value={formData.shootTime} onChange={handleChange} onBlur={handleBlur} className={getInputClass("shootTime")} />
+              </div>
+              <div className="space-y-1">
+                <label className="text-sm font-medium flex flex-col">
+                  <span>Shoot Type <span className="text-red-500">*</span></span>
+                  <span className="text-xs text-secondary/70">कोणत्या प्रकारचे शूट करायचे आहे</span>
+                </label>
+                <select
+                  name="shootType"
+                  value={formData.shootType}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  placeholder="Enter your first name e.g. Jane"
-                  className={touched.firstName && errors.firstName ? "border-red-500 focus:border-red-500" : ""}
-                  aria-invalid={touched.firstName && errors.firstName ? "true" : "false"}
-                  aria-describedby={touched.firstName && errors.firstName ? "firstName-error" : undefined}
-                />
-                {touched.firstName && errors.firstName && (
-                  <p id="firstName-error" className="text-red-500 text-xs mt-1" role="alert">
-                    {errors.firstName}
-                  </p>
-                )}
+                  className={getInputClass("shootType")}
+                >
+                  <option value="">Select Type</option>
+                  <option value="MATERNITY">MATERNITY</option>
+                  <option value="NEWBORN">NEWBORN</option>
+                  <option value="KIDS">KIDS</option>
+                  <option value="CAKE SMASH">CAKE SMASH</option>
+                  <option value="OUTDOOR">OUTDOOR</option>
+                  <option value="TRADITIONAL">TRADITIONAL</option>
+                </select>
+                {touched.shootType && errors.shootType && <p className="text-[10px] text-red-500">{errors.shootType}</p>}
               </div>
-              <div>
-                <label htmlFor="lastName" className="block text-sm font-medium mb-1">
-                  Last Name <span className="text-destructive">*</span>
+              <div className="space-y-1">
+                <label className="text-sm font-medium flex flex-col">
+                  <span>Package Name</span>
+                  <span className="text-xs text-secondary/70">Package Name</span>
                 </label>
-                <Input
-                  id="lastName"
-                  name="lastName"
-                  value={formData.lastName}
+                <input name="packageName" value={formData.packageName} onChange={handleChange} onBlur={handleBlur} placeholder="e.g. Premium" className={getInputClass("packageName")} />
+              </div>
+              <div className="space-y-1">
+                <label className="text-sm font-medium flex flex-col">
+                  <span>Bill Number</span>
+                  <span className="text-xs text-secondary/70">बिल नंबर</span>
+                </label>
+                <input name="billNumber" value={formData.billNumber} onChange={handleChange} onBlur={handleBlur} placeholder="Enter bill #" className={getInputClass("billNumber")} />
+              </div>
+              <div className="space-y-1">
+                <label className="text-sm font-medium flex flex-col">
+                  <span>Delivery Date</span>
+                  <span className="text-xs text-secondary/70">काम द्यावयाची तारीख</span>
+                </label>
+                <input name="deliveryDate" type="date" value={formData.deliveryDate} onChange={handleChange} onBlur={handleBlur} className={getInputClass("deliveryDate")} />
+              </div>
+            </div>
+
+            <div className="h-px bg-border/50" />
+
+            {/* Section 4: Permission & Billing */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="space-y-1">
+                <label className="text-sm font-medium flex flex-col">
+                  <span>Social Media Permission?</span>
+                  <span className="text-xs text-secondary/70">फोटो सोशल मिडिया वरती पोस्ट करण्याची परवानगी आहे का ?</span>
+                </label>
+                <select
+                  name="socialMediaPermission"
+                  value={formData.socialMediaPermission}
                   onChange={handleChange}
-                  onBlur={handleBlur}
-                  placeholder="Enter your Last Name e.g. Smith"
-                  className={touched.lastName && errors.lastName ? "border-red-500 focus:border-red-500" : ""}
-                  aria-invalid={touched.lastName && errors.lastName ? "true" : "false"}
-                  aria-describedby={touched.lastName && errors.lastName ? "lastName-error" : undefined}
-                />
-                {touched.lastName && errors.lastName && (
-                  <p id="lastName-error" className="text-red-500 text-xs mt-1" role="alert">
-                    {errors.lastName}
-                  </p>
-                )}
+                  className={getInputClass("socialMediaPermission")}
+                >
+                  <option value="">Select Option</option>
+                  <option value="YES">YES / हो</option>
+                  <option value="NO">NO / नाही</option>
+                </select>
+              </div>
+              <div className="space-y-1">
+                <label className="text-sm font-medium flex flex-col">
+                  <span>Total Bill</span>
+                  <span className="text-xs text-secondary/70">Total बिल</span>
+                </label>
+                <input name="totalBill" value={formData.totalBill} onChange={handleChange} onBlur={handleBlur} placeholder="₹ 0" className={getInputClass("totalBill")} />
+              </div>
+              <div className="space-y-1">
+                <label className="text-sm font-medium flex flex-col">
+                  <span>Advance Paid</span>
+                  <span className="text-xs text-secondary/70">advance</span>
+                </label>
+                <input name="advance" value={formData.advance} onChange={handleChange} onBlur={handleBlur} placeholder="₹ 0" className={getInputClass("advance")} />
+              </div>
+              <div className="space-y-1">
+                <label className="text-sm font-medium flex flex-col">
+                  <span>Balance Due</span>
+                  <span className="text-xs text-secondary/70">येणे बाकी</span>
+                </label>
+                <input name="balance" value={formData.balance} onChange={handleChange} onBlur={handleBlur} placeholder="₹ 0" className={getInputClass("balance")} />
+              </div>
+              <div className="space-y-1">
+                <label className="text-sm font-medium flex flex-col">
+                  <span>Balance Payment Date</span>
+                  <span className="text-xs text-secondary/70">येणे बाकी जमा करावयाची तारीख</span>
+                </label>
+                <input name="balanceDate" type="date" value={formData.balanceDate} onChange={handleChange} onBlur={handleBlur} className={getInputClass("balanceDate")} />
               </div>
             </div>
 
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium mb-1">
-                Email <span className="text-destructive">*</span>
-              </label>
-              <Input
-                id="email"
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                placeholder="Enter your email"
-                className={touched.email && errors.email ? "border-red-500 focus:border-red-500" : ""}
-                aria-invalid={touched.email && errors.email ? "true" : "false"}
-                aria-describedby={touched.email && errors.email ? "email-error" : undefined}
-              />
-              {touched.email && errors.email && (
-                <p id="email-error" className="text-red-500 text-xs mt-1" role="alert">
-                  {errors.email}
-                </p>
-              )}
-            </div>
+            <div className="h-px bg-border/50" />
 
-            <div>
-              <label htmlFor="phone" className="block text-sm font-medium mb-1">
-                Phone <span className="text-destructive">*</span>
-              </label>
-              <Input
-                id="phone"
-                type="tel"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                placeholder="Enter your 10-digit phone number"
-                maxLength={10}
-                className={touched.phone && errors.phone ? "border-red-500 focus:border-red-500" : ""}
-                aria-invalid={touched.phone && errors.phone ? "true" : "false"}
-                aria-describedby={touched.phone && errors.phone ? "phone-error" : undefined}
-              />
-              {touched.phone && errors.phone && (
-                <p id="phone-error" className="text-red-500 text-xs mt-1" role="alert">
-                  {errors.phone}
-                </p>
-              )}
-            </div>
-
-            <div>
-              <label htmlFor="photographyType" className="block text-sm font-medium mb-1">
-                Which type of Photography are you looking for? <span className="text-destructive">*</span>
-              </label>
-              <Input
-                id="photographyType"
-                name="photographyType"
-                value={formData.photographyType}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                placeholder="e.g. Newborn, Maternity, Family"
-                className={touched.photographyType && errors.photographyType ? "border-red-500 focus:border-red-500" : ""}
-                aria-invalid={touched.photographyType && errors.photographyType ? "true" : "false"}
-                aria-describedby={touched.photographyType && errors.photographyType ? "photographyType-error" : undefined}
-              />
-              {touched.photographyType && errors.photographyType && (
-                <p id="photographyType-error" className="text-red-500 text-xs mt-1" role="alert">
-                  {errors.photographyType}
-                </p>
-              )}
-            </div>
-
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium mb-1">
-                Message <span className="text-muted-foreground text-xs">(Optional)</span>
-              </label>
-              <Textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                placeholder="Tell us more about what you're looking for..."
-                rows={4}
-                maxLength={500}
-                className={touched.message && errors.message ? "border-red-500 focus:border-red-500" : ""}
-                aria-invalid={touched.message && errors.message ? "true" : "false"}
-                aria-describedby={touched.message && errors.message ? "message-error" : undefined}
-              />
-              <div className="flex justify-between mt-1">
-                <div>
-                  {touched.message && errors.message && (
-                    <p id="message-error" className="text-red-500 text-xs" role="alert">
-                      {errors.message}
-                    </p>
-                  )}
-                </div>
-                <p className="text-muted-foreground text-xs">
-                  {formData.message.length}/500
-                </p>
+            {/* Section 5: Assignees */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-1">
+                <label className="text-sm font-medium flex flex-col">
+                  <span>Taken By (Booking)</span>
+                  <span className="text-xs text-secondary/70">काम घेणाऱ्याचे नाव</span>
+                </label>
+                <input name="takenBy" value={formData.takenBy} onChange={handleChange} onBlur={handleBlur} placeholder="Enter name" className={getInputClass("takenBy")} />
+              </div>
+              <div className="space-y-1">
+                <label className="text-sm font-medium flex flex-col">
+                  <span>Photographed By</span>
+                  <span className="text-xs text-secondary/70">फोटो काढणाऱ्याचे नाव</span>
+                </label>
+                <input name="photographedBy" value={formData.photographedBy} onChange={handleChange} onBlur={handleBlur} placeholder="Enter name" className={getInputClass("photographedBy")} />
               </div>
             </div>
 
-            <Button
-              type="submit"
-              variant="terracotta"
-              className="w-full md:w-auto h-14 md:h-12 text-lg md:text-base px-8 rounded-xl font-bold shadow-lg hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
-              disabled={!isFormValid}
-              aria-label={isFormValid ? "Send message" : "Please fix errors before sending"}
-            >
-              Send Message
-            </Button>
-            {!isFormValid && Object.keys(touched).some(key => touched[key as keyof TouchedFields]) && (
-              <p className="text-xs text-muted-foreground mt-2">
-                Please fill in all required fields correctly to send your message.
+            <div className="mt-10 pt-6 border-t border-border">
+              <p className="text-sm text-center text-muted-foreground mb-6">
+                packeges मध्ये दिलेल्या सर्व अटी व नियम वाचले आहेत तरी ते सर्व मला मान्य आहेत. परत आमची कोणतीही तक्रार असणार नाही.
+                <br />
+                <span className="italic text-xs">(I have read and accepted all terms and conditions specified in the packages. We will have no further complaints.)</span>
               </p>
-            )}
+
+              <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div className="text-left">
+                  <p className="text-sm font-medium">नाव व सही / Name and Signature</p>
+                  <div className="h-[2px] w-48 bg-border mt-1" />
+                </div>
+                <Button
+                  type="submit"
+                  variant="terracotta"
+                  disabled={!isFormValid}
+                  className="h-12 px-10 rounded-xl font-bold shadow-lg hover:enabled:scale-105 transition-all text-lg disabled:opacity-50"
+                >
+                  Submit Form / माहिती जमा करा
+                </Button>
+              </div>
+            </div>
           </form>
         </div>
       </div>

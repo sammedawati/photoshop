@@ -10,7 +10,7 @@ const PortfolioBaby = () => {
             <Navbar />
             <main className="pt-24 pb-16">
                 {/* Hero-like Landing Section */}
-                <div className="relative h-[60vh] md:h-[70vh] mb-16 overflow-hidden">
+                <div className="relative h-[60vh] md:h-[70vh] mb-8 overflow-hidden">
                     <img
                         src={heroBaby}
                         alt="Baby Photography"
@@ -29,7 +29,7 @@ const PortfolioBaby = () => {
                 </div>
 
                 <div className="container mx-auto px-4">
-                    <div className="max-w-3xl mx-auto text-center mb-16 text-neutral-600 leading-relaxed">
+                    <div className="max-w-3xl mx-auto text-center mb-6 text-neutral-600 leading-relaxed">
                         <p className="text-lg mb-6">
                             The 2 to 4 month stage is a delightful time to capture your baby's growing personality.
                             From starting to hold their head up during tummy time to those first heart-melting smiles,
@@ -37,24 +37,19 @@ const PortfolioBaby = () => {
                         </p>
 
                         {/* Action Buttons */}
-                        <div className="flex flex-col sm:flex-row gap-6 justify-center mt-12">
+                        <div className="flex flex-col sm:flex-row gap-6 justify-center mt-6">
                             <Link
                                 to="/portfolio/baby/packages"
                                 className="px-10 py-5 bg-white border-2 border-[#7D8C62] text-[#7D8C62] rounded-full text-lg font-medium hover:bg-[#7D8C62] hover:text-white hover:scale-105 transition-all duration-300 shadow-lg"
                             >
                                 Baby Packages
                             </Link>
-                            <Link
-                                to="/portfolio/baby/props"
-                                className="px-10 py-5 border-2 border-[#7D8C62] text-[#7D8C62] rounded-full text-lg font-medium hover:bg-[#7D8C62] hover:text-white hover:scale-105 transition-all duration-300 shadow-lg"
-                            >
-                                Props & Toys
-                            </Link>
+                            {/* Props & Toys button removed */}
                         </div>
                     </div>
 
                     {/* Featured Gallery Preview */}
-                    <div className="mt-20">
+                    <div className="mt-6">
                         <h2 className="text-3xl font-light text-center mb-12 text-neutral-900">Featured Moments</h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                             {[1, 2, 3, 4, 5, 6].map((idx) => (

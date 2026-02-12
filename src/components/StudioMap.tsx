@@ -14,8 +14,8 @@ const StudioMap = () => {
                             <div>
                                 <h3 className="font-semibold text-lg">Address</h3>
                                 <p className="text-muted-foreground">
-                                    Shop No. 1, Ground Floor, Precious Pixels Studio,<br />
-                                    FC Road, Shivaji Nagar, Pune, Maharashtra 411005
+                                    Siddheshwar chowk, Tasgaon,<br />
+                                    Maharashtra 416312
                                 </p>
                             </div>
                         </div>
@@ -24,7 +24,7 @@ const StudioMap = () => {
                             <Phone className="w-6 h-6 text-secondary shrink-0 mt-1" />
                             <div>
                                 <h3 className="font-semibold text-lg">Phone</h3>
-                                <p className="text-muted-foreground">+91 98765 43210</p>
+                                <p className="text-muted-foreground">+91 87667 13494 / 87885 29966</p>
                             </div>
                         </div>
 

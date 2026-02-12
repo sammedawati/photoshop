@@ -8,16 +8,25 @@ import portfolioMaternity from "@/assets/portfolio-maternity.jpg";
 import portfolioNewborn from "@/assets/portfolio-newborn.jpg";
 import portfolioBaby from "@/assets/portfolio-baby.jpg";
 import portfolioFamily from "@/assets/portfolio-family.jpg";
+import christmasImage from "@/assets/christmas-featured-1.jpg";
+import gudipadwaImage from "@/assets/gudipadwa-featured-1.jpg";
+import gudipadwaCoupleImage from "@/assets/gudipadwa-couple-studio.jpg";
+import outdoorImage from "@/assets/outdoor-featured-1.jpg";
+import shivjayantiImage from "@/assets/shivjayanti-featured-1.jpg";
+import traditionalImage from "@/assets/traditional-featured-1.jpg";
+import varkariImage from "@/assets/varkari-featured-1.jpg";
+import portfolioSitter from "@/assets/portfolio-sitter.jpg";
+import portfolioBirthday from "@/assets/portfolio-birthday.jpg";
 
 const studioImages = [
   portfolioMaternity,
   portfolioNewborn,
-  portfolioBaby,
-  portfolioFamily,
-  portfolioMaternity,
-  portfolioNewborn,
-  portfolioBaby,
-  portfolioFamily,
+  christmasImage,
+  gudipadwaImage,
+  outdoorImage,
+  traditionalImage,
+  varkariImage,
+  gudipadwaCoupleImage,
 ];
 
 const About = () => {
@@ -41,13 +50,13 @@ const About = () => {
 
           {/* Photographers */}
           <section className="flex flex-col md:flex-row items-start justify-center gap-16 md:gap-32 mb-20 px-4">
-            {/* Sachin */}
+            {/* Kiran */}
             <div className="flex flex-col items-center max-w-[350px] w-full group">
-              <Link to="/about/profile/sachin" className="relative mb-6">
+              <Link to="/about/profile/kiran" className="relative mb-6">
                 <div className="w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden border-[6px] border-white shadow-xl group-hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-2 ring-1 ring-neutral-200">
                   <img
                     src={photographerMale}
-                    alt="Sachin Subhash Bhor"
+                    alt="Kiran Subhash Pawar"
                     className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
                     loading="lazy"
                   />
@@ -58,7 +67,7 @@ const About = () => {
                 <p className="text-[10px] md:text-[11px] text-neutral-500 tracking-[0.2em] uppercase max-w-[280px] mx-auto leading-relaxed">
                   Fine Artist, Family Portrait<br />Photographer & Mentor
                 </p>
-                <Link to="/about/profile/sachin">
+                <Link to="/about/profile/kiran">
                   <h3 className="text-2xl md:text-4xl font-heading text-neutral-800 tracking-tight hover:text-secondary transition-colors">
                     Kiran Pawar
                   </h3>
@@ -66,13 +75,13 @@ const About = () => {
               </div>
             </div>
 
-            {/* Priyadarshani */}
+            {/* Shivani */}
             <div className="flex flex-col items-center max-w-[350px] w-full group">
-              <Link to="/about/profile/priyadarshani" className="relative mb-6">
+              <Link to="/about/profile/shivani" className="relative mb-6">
                 <div className="w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden border-[6px] border-white shadow-xl group-hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-2 ring-1 ring-neutral-200">
                   <img
                     src={photographerFemale}
-                    alt="Priyadarshani Sachin Bhor"
+                    alt="Shivani Kiran Pawar"
                     className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
                     loading="lazy"
                   />
@@ -83,7 +92,7 @@ const About = () => {
                 <p className="text-[10px] md:text-[11px] text-neutral-500 tracking-[0.2em] uppercase max-w-[280px] mx-auto leading-relaxed">
                   Fine Artist, Maternity, Newborn, Baby<br />Photographer & Mentor
                 </p>
-                <Link to="/about/profile/priyadarshani">
+                <Link to="/about/profile/shivani">
                   <h3 className="text-2xl md:text-4xl font-heading text-neutral-800 tracking-tight hover:text-secondary transition-colors">
                     Shivani Pawar
                   </h3>

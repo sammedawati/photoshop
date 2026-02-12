@@ -1,8 +1,12 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
-import heroMaternity from "@/assets/hero_maternity.png";
-import portfolioMaternity from "@/assets/portfolio-maternity.jpg";
+import heroMaternity from "@/assets/maternity-painting.jpg";
+import portfolioMaternity from "@/assets/maternity-saree-solo.jpg";
+import maternityFeatured1 from "@/assets/maternity-saree-solo.jpg";
+import maternityFeatured2 from "@/assets/maternity-featured-2.jpg";
+import maternityFeatured3 from "@/assets/maternity-featured-3.jpg";
+import maternityFeatured4 from "@/assets/maternity-featured-4.jpg";
 
 const PortfolioMaternity = () => {
     return (
@@ -10,7 +14,7 @@ const PortfolioMaternity = () => {
             <Navbar />
             <main className="pt-24 pb-16">
                 {/* Hero-like Landing Section */}
-                <div className="relative h-[60vh] md:h-[70vh] mb-16 overflow-hidden">
+                <div className="relative h-[60vh] md:h-[70vh] mb-8 overflow-hidden">
                     <img
                         src={heroMaternity}
                         alt="Maternity Photography"
@@ -29,7 +33,7 @@ const PortfolioMaternity = () => {
                 </div>
 
                 <div className="container mx-auto px-4">
-                    <div className="max-w-3xl mx-auto text-center mb-16 text-neutral-600 leading-relaxed">
+                    <div className="max-w-3xl mx-auto text-center mb-6 text-neutral-600 leading-relaxed">
                         <p className="text-lg mb-6">
                             The best time for a maternity photoshoot is typically between 7 and 9 months (30-36 weeks)
                             when your baby bump is beautifully rounded. This is a time of incredible anticipation
@@ -38,7 +42,7 @@ const PortfolioMaternity = () => {
                         </p>
 
                         {/* Action Buttons */}
-                        <div className="flex flex-col sm:flex-row gap-6 justify-center mt-12">
+                        <div className="flex flex-col sm:flex-row gap-6 justify-center mt-6">
                             <Link
                                 to="/portfolio/maternity/packages"
                                 className="px-10 py-5 bg-white border-2 border-[#7D8C62] text-[#7D8C62] rounded-full text-lg font-medium hover:bg-[#7D8C62] hover:text-white hover:scale-105 transition-all duration-300 shadow-lg"
@@ -49,21 +53,20 @@ const PortfolioMaternity = () => {
                     </div>
                 </div>
 
-                {/* Featured Gallery Preview */}
-                <div className="mt-20">
+                <div className="mt-6">
                     <h2 className="text-3xl font-light text-center mb-12 text-neutral-900">Featured Moments</h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {[1, 2, 3, 4, 5, 6].map((idx) => (
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        {[maternityFeatured1, maternityFeatured2, maternityFeatured3, maternityFeatured4].map((img, idx) => (
                             <div
                                 key={idx}
-                                className="relative overflow-hidden rounded-3xl aspect-[4/5] group shadow-sm hover:shadow-xl transition-all duration-500"
+                                className="relative overflow-hidden rounded-3xl aspect-[4/5] shadow-sm"
                             >
                                 <img
-                                    src={portfolioMaternity}
-                                    alt={`Maternity featured ${idx}`}
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    src={img}
+                                    alt={`Maternity featured ${idx + 1}`}
+                                    className="w-full h-full object-cover"
                                 />
-                                <div className="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/10 transition-colors duration-500" />
+                                <div className="absolute inset-0 bg-neutral-900/0 transition-colors duration-500" />
                             </div>
                         ))}
                     </div>

@@ -42,9 +42,9 @@ const SitterPackages = () => {
                             </h2>
                             <div className="h-px w-16 md:w-32 bg-neutral-200" />
                         </div>
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto px-2">
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-screen-2xl mx-auto px-2">
                             {[1, 2, 3, 4].map((i) => (
-                                <div key={i} className="aspect-[3/4] overflow-hidden rounded-xl shadow-lg group">
+                                <div key={i} className="aspect-[2/3] overflow-hidden rounded-xl shadow-lg group">
                                     <img src={heroSitter} alt={`Sitter ${i}`} className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-105" />
                                 </div>
                             ))}

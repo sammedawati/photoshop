@@ -5,8 +5,26 @@ import portfolioBaby from "@/assets/portfolio-baby.jpg";
 import portfolioSitter from "@/assets/portfolio-sitter.jpg";
 import portfolioBirthday from "@/assets/portfolio-birthday.jpg";
 import portfolioFamily from "@/assets/portfolio-family.jpg";
+import christmasImage from "@/assets/christmas-featured-1.jpg";
+import gudipadwaImage from "@/assets/gudipadwa-featured-1.jpg";
+import outdoorImage from "@/assets/outdoor-featured-1.jpg";
+import shivjayantiImage from "@/assets/shivjayanti-featured-1.jpg";
+import traditionalImage from "@/assets/traditional-featured-1.jpg";
+import varkariImage from "@/assets/varkari-featured-1.jpg";
 
 const portfolioItems = [
+  {
+    title: "Christmas Portfolio",
+    subtitle: "Festive Holiday Moments",
+    image: christmasImage,
+    link: "/portfolio/christmas",
+  },
+  {
+    title: "Gudipadwa Portfolio",
+    subtitle: "Traditional New Year Celebration",
+    image: gudipadwaImage,
+    link: "/portfolio/gudipadwa",
+  },
   {
     title: "Maternity Portfolio",
     subtitle: "To avail at 5 months of Pregnancy",
@@ -20,28 +38,28 @@ const portfolioItems = [
     link: "/portfolio/newborn",
   },
   {
-    title: "Baby - Infant Portfolio",
-    subtitle: "2-7 months old Baby",
-    image: portfolioBaby,
-    link: "/portfolio/baby",
+    title: "Outdoor Portfolio",
+    subtitle: "Natural Light & Scenic Backdrops",
+    image: outdoorImage,
+    link: "/portfolio/outdoor",
   },
   {
-    title: "Sitter Portfolio",
-    subtitle: "6-10 months old Baby",
-    image: portfolioSitter,
-    link: "/portfolio/sitter",
+    title: "Shivjayanti Portfolio",
+    subtitle: "Cultural Heritage Celebration",
+    image: shivjayantiImage,
+    link: "/portfolio/shivjayanti",
   },
   {
-    title: "Pre Birthday Portfolio",
-    subtitle: "10-14 months old Baby",
-    image: portfolioBirthday,
-    link: "/portfolio/birthday",
+    title: "Traditional Portfolio",
+    subtitle: "Classic Indian Attire",
+    image: traditionalImage,
+    link: "/portfolio/traditional",
   },
   {
-    title: "Family Portfolio",
-    subtitle: "For All",
-    image: portfolioFamily,
-    link: "/portfolio/family",
+    title: "Varkari Portfolio",
+    subtitle: "Spiritual Journey",
+    image: varkariImage,
+    link: "/portfolio/varkari",
   },
 ];
 
@@ -53,7 +71,7 @@ const PortfolioSection = () => {
           CLICK on the image to view portfolio
         </h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-6xl mx-auto">
           {portfolioItems.map((item, index) => (
             <Link
               key={item.title}

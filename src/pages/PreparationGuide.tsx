@@ -104,7 +104,7 @@ const PreparationGuide = () => {
 
                                 <div>
                                     <h3 className="font-heading text-lg mb-2">Can we select the set up/theme?</h3>
-                                    <p className="text-muted-foreground">Yes, you can. Usually we do create the set up according to the colour scheme of baby's / Mom to be's costume. Our lead photographers Sachin & Priyadarshani have a lot knowledge of colors and creative elements which create a beautiful impact in photos.</p>
+                                    <p className="text-muted-foreground">Yes, you can. Usually we do create the set up according to the colour scheme of baby's / Mom to be's costume. Our lead photographers Kiran & Shivani have a lot knowledge of colors and creative elements which create a beautiful impact in photos.</p>
                                 </div>
 
                                 <div>

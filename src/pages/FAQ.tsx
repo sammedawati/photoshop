@@ -92,11 +92,6 @@ const FAQ = () => {
                 Preparation Guide
               </Button>
             </Link>
-            <Link to="/portfolio">
-              <Button variant="outline" size="sm">
-                Our Portfolio
-              </Button>
-            </Link>
           </div>
 
           {/* FAQ Accordion */}

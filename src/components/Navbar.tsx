@@ -15,17 +15,18 @@ const Navbar = () => {
     { name: "PORTFOLIO", path: "/portfolio", hasDropdown: true },
     { name: "ABOUT", path: "/about" },
     { name: "FAQ", path: "/faq" },
-    { name: "BLOG", path: "/blog" },
     { name: "COMMERCIAL", path: "/commercial" },
   ];
 
   const portfolioItems = [
+    { name: "Christmas", path: "/portfolio/christmas" },
+    { name: "Gudipadwa", path: "/portfolio/gudipadwa" },
     { name: "Maternity", path: "/portfolio/maternity" },
     { name: "Newborn", path: "/portfolio/newborn" },
-    { name: "Baby", path: "/portfolio/baby" },
-    { name: "Sitter", path: "/portfolio/sitter" },
-    { name: "Pre-Birthday", path: "/portfolio/birthday" },
-    { name: "Family", path: "/portfolio/family" },
+    { name: "Outdoor", path: "/portfolio/outdoor" },
+    { name: "Shivjayanti", path: "/portfolio/shivjayanti" },
+    { name: "Traditional", path: "/portfolio/traditional" },
+    { name: "Varkari", path: "/portfolio/varkari" },
   ];
 
   const isActive = (path: string) => location.pathname === path;

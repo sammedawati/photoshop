@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import heroLifestyle from "@/assets/hero_family.png";
-import portfolioLifestyle from "@/assets/portfolio-lifestyle.jpg";
+
 
 const PortfolioLifestyle = () => {
     return (
@@ -10,7 +10,7 @@ const PortfolioLifestyle = () => {
             <Navbar />
             <main className="pt-24 pb-16">
                 {/* Hero-like Landing Section */}
-                <div className="relative h-[60vh] md:h-[70vh] mb-16 overflow-hidden">
+                <div className="relative h-[60vh] md:h-[70vh] mb-8 overflow-hidden">
                     <img
                         src={heroLifestyle}
                         alt="Lifestyle Photography"
@@ -29,7 +29,7 @@ const PortfolioLifestyle = () => {
                 </div>
 
                 <div className="container mx-auto px-4">
-                    <div className="max-w-3xl mx-auto text-center mb-16 text-neutral-600 leading-relaxed">
+                    <div className="max-w-3xl mx-auto text-center mb-6 text-neutral-600 leading-relaxed">
                         <p className="text-lg mb-6">
                             Lifestyle photography is about capturing the beauty of everyday life.
                             Whether in the comfort of your home or at a meaningful outdoor location,
@@ -38,33 +38,28 @@ const PortfolioLifestyle = () => {
                         </p>
 
                         {/* Action Buttons */}
-                        <div className="flex flex-col sm:flex-row gap-6 justify-center mt-12">
+                        <div className="flex flex-col sm:flex-row gap-6 justify-center mt-6">
                             <Link
                                 to="/portfolio/lifestyle/packages"
                                 className="px-10 py-5 bg-white border-2 border-[#7D8C62] text-[#7D8C62] rounded-full text-lg font-medium hover:bg-[#7D8C62] hover:text-white hover:scale-105 transition-all duration-300 shadow-lg"
                             >
                                 Lifestyle Packages
                             </Link>
-                            <Link
-                                to="/portfolio/lifestyle/gallery"
-                                className="px-10 py-5 border-2 border-[#7D8C62] text-[#7D8C62] rounded-full text-lg font-medium hover:bg-[#7D8C62] hover:text-white hover:scale-105 transition-all duration-300 shadow-lg"
-                            >
-                                Visual Gallery
-                            </Link>
+                            {/* Visual Gallery button removed */}
                         </div>
                     </div>
 
                     {/* Featured Gallery Preview */}
-                    <div className="mt-20">
+                    <div className="mt-6">
                         <h2 className="text-3xl font-light text-center mb-12 text-neutral-900">Featured Moments</h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                             {[1, 2, 3, 4, 5, 6].map((idx) => (
                                 <div
                                     key={idx}
-                                    className="relative overflow-hidden rounded-3xl aspect-[4/5] group shadow-sm hover:shadow-xl transition-all duration-500"
+                                    className="relative overflow-hidden rounded-3xl aspect-[3/4] group shadow-sm hover:shadow-xl transition-all duration-500"
                                 >
                                     <img
-                                        src={portfolioLifestyle}
+                                        src={heroLifestyle}
                                         alt={`Lifestyle featured ${idx}`}
                                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />

@@ -8,14 +8,24 @@ import portfolioBaby from "@/assets/portfolio-baby.jpg";
 import portfolioSitter from "@/assets/portfolio-sitter.jpg";
 import portfolioBirthday from "@/assets/portfolio-birthday.jpg";
 import portfolioFamily from "@/assets/portfolio-family.jpg";
+import portfolioToddler from "@/assets/portfolio-toddler.jpg";
+
+import christmasImage from "@/assets/christmas-featured-1.jpg";
+import gudipadwaImage from "@/assets/gudipadwa-featured-1.jpg";
+import outdoorImage from "@/assets/outdoor-featured-1.jpg";
+import shivjayantiImage from "@/assets/shivjayanti-featured-1.jpg";
+import traditionalImage from "@/assets/traditional-featured-1.jpg";
+import varkariImage from "@/assets/varkari-featured-1.jpg";
 
 const portfolioCategories = [
   { title: "MATERNITY", image: portfolioMaternity, link: "/portfolio/maternity" },
   { title: "NEWBORN", image: portfolioNewborn, link: "/portfolio/newborn" },
-  { title: "BABY - INFANT", image: portfolioBaby, link: "/portfolio/baby" },
-  { title: "SITTER", image: portfolioSitter, link: "/portfolio/sitter" },
-  { title: "PRE BIRTHDAY - CAKE SMASH", image: portfolioBirthday, link: "/portfolio/birthday" },
-  { title: "FAMILY PORTRAIT", image: portfolioFamily, link: "/portfolio/family" },
+  { title: "CHRISTMAS", image: christmasImage, link: "/portfolio/christmas" },
+  { title: "GUDIPADWA", image: gudipadwaImage, link: "/portfolio/gudipadwa" },
+  { title: "OUTDOOR", image: outdoorImage, link: "/portfolio/outdoor" },
+  { title: "SHIVJAYANTI", image: shivjayantiImage, link: "/portfolio/shivjayanti" },
+  { title: "TRADITIONAL", image: traditionalImage, link: "/portfolio/traditional" },
+  { title: "VARKARI", image: varkariImage, link: "/portfolio/varkari" },
 ];
 
 const Portfolio = () => {
@@ -29,7 +39,7 @@ const Portfolio = () => {
           variant="minimal"
         />
         <div className="container mx-auto px-4 py-16">
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {portfolioCategories.map((category, index) => (
               <Link
                 key={category.title}

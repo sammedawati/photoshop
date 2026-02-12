@@ -1,8 +1,12 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
-import heroNewborn from "@/assets/hero_newborn.png";
+import heroNewborn from "@/assets/hero-newborn-updated.jpg";
 import portfolioNewborn from "@/assets/portfolio-newborn.jpg";
+import newbornFeatured1 from "@/assets/hero-newborn-updated.jpg";
+import newbornFeatured2 from "@/assets/newborn-featured-2.jpg";
+import newbornFeatured3 from "@/assets/newborn-featured-3.jpg";
+import newbornFeatured4 from "@/assets/newborn-featured-4.jpg";
 
 const PortfolioNewborn = () => {
     return (
@@ -29,7 +33,7 @@ const PortfolioNewborn = () => {
                 </div>
 
                 <div className="container mx-auto px-4">
-                    <div className="max-w-3xl mx-auto text-center mb-8 text-neutral-600 leading-relaxed">
+                    <div className="max-w-3xl mx-auto text-center mb-6 text-neutral-600 leading-relaxed">
                         <p className="text-lg mb-6">
                             The ideal time for a Newborn Shoot is between 5 to 14 days old.
                             During this period, babies tend to sleep deeply, allowing for those
@@ -39,37 +43,32 @@ const PortfolioNewborn = () => {
                         </p>
 
                         {/* Action Buttons */}
-                        <div className="flex flex-col sm:flex-row gap-6 justify-center mt-12">
+                        <div className="flex flex-col sm:flex-row gap-6 justify-center mt-6">
                             <Link
                                 to="/portfolio/newborn/packages"
                                 className="px-10 py-5 bg-white border-2 border-[#7D8C62] text-[#7D8C62] rounded-full text-lg font-medium hover:bg-[#7D8C62] hover:text-white hover:scale-105 transition-all duration-300 shadow-lg"
                             >
                                 Newborn Packages
                             </Link>
-                            <Link
-                                to="/portfolio/newborn/props"
-                                className="px-10 py-5 border-2 border-[#7D8C62] text-[#7D8C62] rounded-full text-lg font-medium hover:bg-[#7D8C62] hover:text-white hover:scale-105 transition-all duration-300 shadow-lg"
-                            >
-                                Props & Themes
-                            </Link>
+                            {/* Props & Themes button removed */}
                         </div>
                     </div>
 
                     {/* Featured Gallery Preview */}
-                    <div className="mt-12">
+                    <div className="mt-6">
                         <h2 className="text-3xl font-light text-center mb-8 text-neutral-900">Featured Moments</h2>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {[1, 2, 3, 4, 5, 6].map((idx) => (
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            {[newbornFeatured1, newbornFeatured2, newbornFeatured3, newbornFeatured4].map((img, idx) => (
                                 <div
                                     key={idx}
-                                    className="relative overflow-hidden rounded-3xl aspect-[4/5] group shadow-sm hover:shadow-xl transition-all duration-500"
+                                    className="relative overflow-hidden rounded-3xl aspect-[4/5] shadow-sm"
                                 >
                                     <img
-                                        src={portfolioNewborn}
-                                        alt={`Newborn featured ${idx}`}
-                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                        src={img}
+                                        alt={`Newborn featured ${idx + 1}`}
+                                        className="w-full h-full object-cover"
                                     />
-                                    <div className="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/10 transition-colors duration-500" />
+                                    <div className="absolute inset-0 bg-neutral-900/0 transition-colors duration-500" />
                                 </div>
                             ))}
                         </div>

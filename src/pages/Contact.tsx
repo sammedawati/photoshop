@@ -16,7 +16,7 @@ const Contact = () => {
           subtitle="Get in touch with us effectively"
           backgroundImage={shopExterior}
         />
-        <div className="pt-16 pb-16">
+        <div>
           <ContactSection />
           <StudioGallery />
           <StudioMap />

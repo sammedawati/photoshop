@@ -18,7 +18,7 @@ const Footer = () => {
           {/* Address */}
           <div className="flex items-center justify-center gap-2 mb-1 text-sm">
             <MapPin className="w-4 h-4" />
-            <span>Address: 101, Waman Ganesh Heights, MDA Pashan Rd, Pashan, Pune 411021</span>
+            <span>Address: Siddheshwar chowk, Tasgaon, Maharashtra 416312</span>
           </div>
 
           <p className="text-sm mb-1">
@@ -28,7 +28,7 @@ const Footer = () => {
 
           <div className="flex items-center justify-center gap-2 mb-3">
             <Phone className="w-4 h-4" />
-            <span className="font-medium">Call: +91 8484854290</span>
+            <span className="font-medium">Call: +91 8766713494 / 8788529966</span>
           </div>
 
           {/* Social Links */}
